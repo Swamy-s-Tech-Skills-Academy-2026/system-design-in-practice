@@ -1,65 +1,68 @@
 # Repository Structure & Context
 
-**Version**: 1.4  
-**Last Updated**: November 24, 2025
+**Version**: 2.0  
+**Last Updated**: December 13, 2025
 
 ---
 
 ## 🧭 Repository Context
 
-**Prompt Engineering Playbook** is a comprehensive playbook that standardizes how prompts are designed, developed, tested, and integrated across C#, Python, and Postman workflows using Azure OpenAI. It provides:
+**System Design in Practice** is a comprehensive guide to system design, focusing on real-world architectural decisions, trade-offs, and scalability patterns. It provides:
 
-- Standard prompt patterns (instruction-based, role-based, RAG, chain-of-thought, evaluation)
-- Reusable prompt templates for common tasks
-- Governance guidelines and quality standards
-- Code integration examples in Python, C#, and Postman
+- Core system design principles
+- Common architectural patterns
+- Building blocks of distributed systems
+- End-to-end system design case studies
+- Diagrams (C4, sequence, flow)
+- Trade-offs and failure scenarios
 
-**Target Audience**: Engineering teams working with Azure OpenAI, prompt engineers, AI application developers
+**Target Audience**: 
+- Software Engineers preparing for system design interviews
+- Senior engineers transitioning to architect roles
+- Engineers designing scalable systems in production
 
-**Purpose**: Ensures uniformity, reduces model misbehaviour, accelerates onboarding, improves productivity, and provides a consistent framework for enterprise-grade Azure OpenAI development
+**Purpose**: Provides a practical, interview-ready guide to system design with real-world case studies, architectural patterns, and scalability considerations.
 
 ### 🚨 CRITICAL: Repository Purpose
 
-**This repository (`prompt-engineering-playbook`) contains:**
+**This repository (`system-design-in-practice`) contains:**
 
-- ✅ **Playbook Documentation**: Core playbook framework and documentation (`playbook/` directory)
-- ✅ **Code Examples**: Working examples in Python, C#, and Postman (`src/` directory)
-- ✅ **Templates**: Reusable prompt templates
-- ✅ **Governance**: Review workflows, storage strategy, quality guidelines
-- ✅ **Infrastructure Guidance**: Azure setup and configuration guidance
+- ✅ **Educational Content**: System design principles, patterns, and building blocks (`src/01_introduction/` through `src/08_failures/`)
+- ✅ **Case Studies**: End-to-end system design case studies (`src/07_case-studies/`)
+- ✅ **References**: Learning resources (books, papers, tools) (`src/references/`)
+- ✅ **Documentation**: Roadmap and learning path (`docs/ROADMAP.md`)
 
 ### 📋 Content Type Classifications
 
-**Playbook Documentation** (`playbook/`):
-- Purpose: Framework documentation and guidelines
-- YAML Frontmatter: NOT required
-- Line Limit: Recommended ≤150 lines, but flexible
-- File Naming: Must use numbering (01-, 02-, etc., no 00-)
-
-**Educational Content** (`01_Reference/`, `02_Learning/`, `03_Interview-Prep/`):
-- Purpose: Educational learning materials
-- YAML Frontmatter: REQUIRED (all 5 metadata fields)
-- Line Limit: STRICT ≤150 lines (split, don't trim)
+**Educational Content** (`src/01_introduction/`, `src/02_interview-prep/`, `src/03_foundations/`, `src/04_principles/`, `src/05_building-blocks/`, `src/06_patterns/`, `src/08_failures/`):
+- Purpose: Educational learning materials for system design
+- YAML Frontmatter: Recommended but not strictly required for placeholder content
+- Line Limit: Recommended ≤150 lines (split, don't trim)
 - File Naming: Must use numbering (01_, 02_, etc., no 00_)
 
-**Code Examples** (`src/`):
-- Purpose: Working code samples
-- YAML Frontmatter: NOT required
-- Line Limit: Not applicable
-- File Naming: Standard naming conventions
+**Case Studies** (`src/07_case-studies/`):
+- Purpose: End-to-end system design case studies
+- Structure: Each case study has `requirements.md`, `high-level-design.md`, `low-level-design.md`, `scalability.md`, `trade-offs.md`
+- Diagrams: Co-located in `diagrams/` folder within each case study
+- File Naming: Standard naming (no numbering required for case study folders)
+
+**References** (`src/references/`):
+- Purpose: Learning resources and reference materials
+- File Naming: Logical names (books.md, papers.md, tools.md)
+- No numbering required (reference materials)
 
 ---
 
 ## 📁 Repository Structure
 
-### Current Structure (As of November 24, 2025)
+### Current Structure (As of December 13, 2025)
 
 ```text
-prompt-engineering-playbook/
+system-design-in-practice/
 ├── .cursor/                               # Cursor AI configuration
 │   └── rules/                             # Project rules (this directory)
 │       ├── 01_educational-content-rules.mdc
-│       ├── 02_repository-structure.mdc
+│       ├── 02_repository-structure.mdc    # THIS FILE
 │       ├── 03_quality-assurance.mdc
 │       ├── 04_markdown-standards.mdc
 │       ├── 05_primary-directives.mdc
@@ -68,69 +71,173 @@ prompt-engineering-playbook/
 ├── .github/                               # GitHub configuration
 │   ├── workflows/                         # CI/CD workflows
 │   ├── ISSUE_TEMPLATE/                    # Issue templates
-│   ├── PULL_REQUEST_TEMPLATE.md           # PR template
 │   ├── copilot-instructions.md            # GitHub Copilot instructions
 │   └── prompts/                           # Reusable prompt templates
-│       ├── smart-prompt-framework-guide.md
-│       └── task-prompt.md
-├── playbook/                              # Core playbook framework
-│   ├── 01-overview.md
-│   ├── 02-structure-and-toc.md
-│   ├── 03-patterns-and-anti-patterns.md
-│   ├── 04-templates.md
-│   ├── 05-governance.md
-│   └── 06-evaluation-and-testing.md
-├── src/                                   # Code examples
-│   ├── python/
-│   ├── csharp/
-│   └── postman/
-├── infra/                                 # Infrastructure guidance
-│   └── azure-guidance.md
-├── docs/                                  # Additional documentation
-│   └── architecture-diagrams/
+├── docs/                                  # Documentation
+│   ├── ROADMAP.md                         # Learning path and roadmap
+│   └── WORKSPACE_REVIEW.md                # Workspace review report
+├── src/                                   # Educational content
+│   ├── CONTENT_INDEX.md                   # Complete content index
+│   ├── 01_introduction/                   # Getting started
+│   │   ├── 01_modern-system-design.md
+│   │   ├── 02_why-learn-system-design.md
+│   │   ├── 03_course-structure.md
+│   │   └── README.md
+│   ├── 02_interview-prep/                 # Interview preparation
+│   │   ├── 01_getting-ready.md
+│   │   ├── 02_dos-and-donts.md
+│   │   ├── 03_preparation-timeline.md
+│   │   ├── 04_mock-interviews.md
+│   │   ├── 05_ai-evaluation.md
+│   │   └── README.md
+│   ├── 03_foundations/                    # Foundational concepts
+│   │   ├── 01_abstractions.md
+│   │   ├── 02_network-abstractions.md
+│   │   ├── 03_consistency-models.md
+│   │   ├── 04_failure-models.md
+│   │   ├── 05_back-of-envelope.md
+│   │   ├── 06_c4-diagrams.md
+│   │   └── README.md
+│   ├── 04_principles/                     # System design principles
+│   │   ├── 01_availability.md
+│   │   ├── 02_reliability.md
+│   │   ├── 03_scalability.md
+│   │   ├── 04_consistency.md
+│   │   ├── 05_fault-tolerance.md
+│   │   ├── 06_maintainability.md
+│   │   └── 07_security.md
+│   ├── 05_building-blocks/                # Core building blocks
+│   │   ├── 01_dns.md
+│   │   ├── 02_load-balancers.md
+│   │   ├── 03_databases.md
+│   │   ├── 04_key-value-store.md
+│   │   ├── 05_cdn.md
+│   │   ├── 06_sequencer.md
+│   │   ├── 07_monitoring.md
+│   │   ├── 08_distributed-cache.md
+│   │   ├── 09_message-queues.md
+│   │   ├── 10_pub-sub.md
+│   │   ├── 11_object-storage.md
+│   │   ├── 12_search.md
+│   │   ├── 13_distributed-logging.md
+│   │   ├── 14_task-scheduler.md
+│   │   └── 15_sharded-counters.md
+│   ├── 06_patterns/                       # Architectural patterns
+│   │   ├── 01_caching.md
+│   │   ├── 02_rate-limiting.md
+│   │   ├── 03_circuit-breaker.md
+│   │   ├── 04_cqrs.md
+│   │   └── 05_event-driven.md
+│   ├── 07_case-studies/                   # End-to-end case studies
+│   │   ├── url-shortener/
+│   │   │   ├── requirements.md
+│   │   │   ├── high-level-design.md
+│   │   │   ├── low-level-design.md
+│   │   │   ├── scalability.md
+│   │   │   ├── trade-offs.md
+│   │   │   └── diagrams/                  # Case study specific diagrams
+│   │   ├── youtube/
+│   │   ├── twitter/
+│   │   ├── instagram/
+│   │   ├── uber/
+│   │   ├── whatsapp/
+│   │   ├── google-maps/
+│   │   ├── yelp/
+│   │   ├── quora/
+│   │   ├── newsfeed/
+│   │   ├── web-crawler/
+│   │   ├── livestreaming/
+│   │   ├── videoconferencing/
+│   │   ├── typeahead/
+│   │   ├── google-docs/
+│   │   ├── deployment/
+│   │   ├── payment/
+│   │   ├── chatgpt/
+│   │   └── README.md
+│   ├── 08_failures/                       # Real-world failure analysis
+│   │   ├── 01_introduction.md
+│   │   ├── 02_facebook-outage.md
+│   │   ├── 03_aws-kinesis-outage.md
+│   │   ├── 04_aws-outage.md
+│   │   ├── 05_lessons-learned.md
+│   │   └── README.md
+│   └── references/                        # Learning resources
+│       ├── books.md
+│       ├── papers.md
+│       └── tools.md
 ├── LICENSE                                 # MIT License
 ├── README.md                               # Main repository documentation
 ├── CONTRIBUTING.md                         # Contribution guidelines
 ├── CODE_OF_CONDUCT.md                     # Code of conduct
-└── .gitignore                             # Git ignore rules
+└── lychee.toml                            # Link checker configuration
 ```
 
 ## 📁 Directory Structure Details
 
-### Playbook Directory
+### Educational Content Directories
 
-The `playbook/` directory contains the core playbook framework:
+**01_introduction/** - Getting started with system design
+- Overview of modern system design
+- Why learn system design
+- Course structure
 
-- **01-overview.md**: Introduction and getting started
-- **02-structure-and-toc.md**: Playbook organization and table of contents
-- **03-patterns-and-anti-patterns.md**: Prompt patterns and what to avoid
-- **04-templates.md**: Reusable prompt templates
-- **05-governance.md**: Review workflows, storage, quality guidelines
-- **06-evaluation-and-testing.md**: Testing and evaluation methodologies
+**02_interview-prep/** - Interview preparation
+- Getting ready for interviews
+- Do's and don'ts
+- Preparation timeline
+- Mock interview strategies
+- AI evaluation tools
 
-### Source Directory
+**03_foundations/** - Foundational concepts
+- Abstractions in system design
+- Network abstractions (RPC)
+- Consistency models
+- Failure models
+- Back-of-the-envelope calculations
+- C4 model for system design
 
-The `src/` directory contains working code examples:
+**04_principles/** - System design principles
+- Availability, reliability, scalability
+- Consistency, fault tolerance
+- Maintainability, security
 
-- **python/**: Python examples using Azure OpenAI SDK
-- **csharp/**: C# examples using .NET SDK
-- **postman/**: Postman collections for REST API testing
+**05_building-blocks/** - Core building blocks
+- DNS, load balancers, databases
+- Key-value stores, CDN, sequencer
+- Monitoring, distributed cache
+- Message queues, pub-sub
+- Object storage, search
+- Distributed logging, task scheduler
+- Sharded counters
 
-### Infrastructure Directory
+**06_patterns/** - Architectural patterns
+- Caching, rate limiting
+- Circuit breaker, CQRS
+- Event-driven architecture
 
-The `infra/` directory contains infrastructure guidance:
+**07_case-studies/** - End-to-end case studies
+- Each case study follows standard structure
+- Diagrams co-located in `diagrams/` folder
+- C4 diagrams: context, container, component
 
-- **azure-guidance.md**: Azure OpenAI setup and configuration
+**08_failures/** - Real-world failure analysis
+- Introduction to system failures
+- Case studies of major outages
+- Lessons learned
+
+### References Directory
+
+**references/** - Learning resources
+- Books, papers, tools
+- Not numbered (reference materials)
 
 ## 📞 Support & Escalation
 
-**Questions about prompt patterns?** → Check `playbook/03-patterns-and-anti-patterns.md`
+**Questions about system design principles?** → Check `src/04_principles/`
 
-**Need a template?** → Check `playbook/04-templates.md`
+**Need building blocks information?** → Check `src/05_building-blocks/`
 
-**Code examples?** → Check `src/` directory
-
-**Azure setup?** → Check `infra/azure-guidance.md`
+**Looking for case studies?** → Check `src/07_case-studies/`
 
 **Structure outdated?** → Update `.github/copilot-instructions.md` and `README.md` immediately
 
@@ -139,7 +246,7 @@ The `infra/` directory contains infrastructure guidance:
 ## For More Information
 
 - **Repository**: Check README.md for repository location
-- **Playbook Overview**: `playbook/01-overview.md`
-- **Structure Reference**: `playbook/02-structure-and-toc.md`
+- **Learning Path**: `docs/ROADMAP.md`
+- **Content Index**: `src/CONTENT_INDEX.md`
 - **GitHub Copilot Instructions**: `.github/copilot-instructions.md`
 - **Contributing**: `CONTRIBUTING.md`
