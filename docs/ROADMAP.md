@@ -65,7 +65,6 @@ This roadmap outlines the learning path and content organization for mastering s
 
 - [x] Repository structure created
 - [x] Documentation framework established
-- [x] Migration plan created
 - [x] Content index established
 - [x] All directories and placeholder files created
 - [ ] Phase 1 content (Foundations) - *In Progress*

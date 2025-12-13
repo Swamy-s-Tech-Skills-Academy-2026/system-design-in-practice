@@ -124,8 +124,6 @@ system-design-in-practice/
 │
 ├── docs/
 │   ├── ROADMAP.md                 # Learning path and roadmap
-│   ├── MIGRATION_PLAN.md          # Content migration strategy
-│   ├── MIGRATION_SUMMARY.md       # Migration summary
 │   └── architecture-diagrams/
 │
 ├── CONTRIBUTING.md
