@@ -1,133 +1,210 @@
-# GitHub Copilot Instructions for Prompt Engineering Playbook
+# GitHub Copilot Instructions for System Design in Practice
 
-**Version**: 1.0  
-**Last Updated**: December 2025  
-**Repository**: `prompt-engineering-playbook`
+**Version**: 2.0  
+**Last Updated**: December 13, 2025  
+**Repository**: `system-design-in-practice`
 
 ---
 
 ## 🎯 Repository Purpose
 
-**Prompt Engineering Playbook** is a comprehensive playbook that standardizes how prompts are designed, developed, tested, and integrated across C#, Python, and Postman workflows using Azure OpenAI.
+**System Design in Practice** is a comprehensive guide to system design, focusing on real-world architectural decisions, trade-offs, and scalability patterns.
 
 ### What This Repository Provides
 
-- **Standard Prompt Patterns**: Instruction-based, role-based, RAG, chain-of-thought, evaluation prompts
-- **Reusable Templates**: Summarization, classification, extraction, transformation, code-generation
-- **Governance Guidelines**: Review workflows, storage strategy, safety considerations, quality guidelines
-- **Code Integration Examples**: Working samples in Python, C#, and Postman for Azure OpenAI
-- **Infrastructure Guidance**: Azure OpenAI setup and configuration
+- **System Design Principles**: Availability, reliability, scalability, consistency, fault tolerance, maintainability, security
+- **Building Blocks**: DNS, load balancers, databases, caching, messaging, search, and more
+- **Architectural Patterns**: Caching, rate limiting, circuit breaker, CQRS, event-driven
+- **Case Studies**: End-to-end system designs (URL Shortener, YouTube, Twitter, Uber, WhatsApp, etc.)
+- **Failure Analysis**: Real-world outage case studies and lessons learned
+- **Interview Preparation**: Strategies, do's and don'ts, mock interviews
 
 ### Target Audience
 
-- Engineering teams working with Azure OpenAI
-- Prompt engineers
-- AI application developers
+- Software Engineers preparing for system design interviews
+- Senior engineers transitioning to architect roles
+- Engineers designing scalable systems in production
 - Technical leads and architects
 
 ### Business Value
 
-- Ensures uniformity across prompt engineering practices
-- Reduces model misbehaviour through tested patterns
-- Accelerates onboarding for new team members
-- Improves productivity with reusable templates
-- Provides consistent framework for enterprise-grade Azure OpenAI development
+- Interview-ready preparation materials
+- Practical system design knowledge
+- Real-world case studies and patterns
+- Scalable architecture guidance
 
 ---
 
 ## 📁 Repository Structure
 
 ```text
-prompt-engineering-playbook/
+system-design-in-practice/
 ├── .github/
-│   ├── workflows/
-│   │   ├── ci-python.yml              # Python linting and testing
-│   │   ├── ci-dotnet.yml              # .NET build and testing
-│   │   └── validate-postman.yml       # Postman collection validation
-│   ├── ISSUE_TEMPLATE/
-│   ├── PULL_REQUEST_TEMPLATE.md
-│   └── copilot-instructions.md        # THIS FILE
-├── playbook/                          # Core playbook framework
-│   ├── 01-overview.md                 # Introduction and getting started
-│   ├── 02-structure-and-toc.md        # Table of contents
-│   ├── 03-patterns-and-anti-patterns.md  # Prompt patterns
-│   ├── 04-templates.md                # Reusable templates
-│   ├── 05-governance.md               # Governance guidelines
-│   └── 06-evaluation-and-testing.md   # Testing approaches
-├── src/                               # Code examples
-│   ├── python/
-│   │   ├── README.md
-│   │   ├── requirements.txt
-│   │   └── samples/                   # Python sample scripts
-│   ├── csharp/
-│   │   ├── README.md
-│   │   └── samples/                   # C# sample projects
-│   └── postman/
-│       ├── README.md
-│       ├── prompt-playbook.postman_collection.json
-│       └── prompt-playbook.postman_environment.json
-├── infra/                             # Infrastructure guidance
-│   └── azure-guidance.md
-├── docs/                              # Additional documentation
-│   └── architecture-diagrams/
+│   ├── workflows/                         # CI/CD workflows
+│   ├── ISSUE_TEMPLATE/                    # Issue templates
+│   ├── copilot-instructions.md            # THIS FILE
+│   └── prompts/                           # Reusable prompt templates
+├── docs/                                  # Documentation
+│   ├── ROADMAP.md                         # Learning path and roadmap
+│   └── WORKSPACE_REVIEW.md                # Workspace review report
+├── src/                                   # Educational content
+│   ├── CONTENT_INDEX.md                   # Complete content index
+│   ├── 01_introduction/                   # Getting started
+│   │   ├── 01_modern-system-design.md
+│   │   ├── 02_why-learn-system-design.md
+│   │   ├── 03_course-structure.md
+│   │   └── README.md
+│   ├── 02_interview-prep/                 # Interview preparation
+│   │   ├── 01_getting-ready.md
+│   │   ├── 02_dos-and-donts.md
+│   │   ├── 03_preparation-timeline.md
+│   │   ├── 04_mock-interviews.md
+│   │   ├── 05_ai-evaluation.md
+│   │   └── README.md
+│   ├── 03_foundations/                    # Foundational concepts
+│   │   ├── 01_abstractions.md
+│   │   ├── 02_network-abstractions.md
+│   │   ├── 03_consistency-models.md
+│   │   ├── 04_failure-models.md
+│   │   ├── 05_back-of-envelope.md
+│   │   ├── 06_c4-diagrams.md
+│   │   └── README.md
+│   ├── 04_principles/                     # System design principles
+│   │   ├── 01_availability.md
+│   │   ├── 02_reliability.md
+│   │   ├── 03_scalability.md
+│   │   ├── 04_consistency.md
+│   │   ├── 05_fault-tolerance.md
+│   │   ├── 06_maintainability.md
+│   │   └── 07_security.md
+│   ├── 05_building-blocks/                # Core building blocks
+│   │   ├── 01_dns.md
+│   │   ├── 02_load-balancers.md
+│   │   ├── 03_databases.md
+│   │   ├── 04_key-value-store.md
+│   │   ├── 05_cdn.md
+│   │   ├── 06_sequencer.md
+│   │   ├── 07_monitoring.md
+│   │   ├── 08_distributed-cache.md
+│   │   ├── 09_message-queues.md
+│   │   ├── 10_pub-sub.md
+│   │   ├── 11_object-storage.md
+│   │   ├── 12_search.md
+│   │   ├── 13_distributed-logging.md
+│   │   ├── 14_task-scheduler.md
+│   │   └── 15_sharded-counters.md
+│   ├── 06_patterns/                       # Architectural patterns
+│   │   ├── 01_caching.md
+│   │   ├── 02_rate-limiting.md
+│   │   ├── 03_circuit-breaker.md
+│   │   ├── 04_cqrs.md
+│   │   └── 05_event-driven.md
+│   ├── 07_case-studies/                   # End-to-end case studies
+│   │   ├── url-shortener/
+│   │   │   ├── requirements.md
+│   │   │   ├── high-level-design.md
+│   │   │   ├── low-level-design.md
+│   │   │   ├── scalability.md
+│   │   │   ├── trade-offs.md
+│   │   │   └── diagrams/                  # Case study specific diagrams
+│   │   ├── youtube/
+│   │   ├── twitter/
+│   │   ├── instagram/
+│   │   ├── uber/
+│   │   ├── whatsapp/
+│   │   ├── google-maps/
+│   │   ├── yelp/
+│   │   ├── quora/
+│   │   ├── newsfeed/
+│   │   ├── web-crawler/
+│   │   ├── livestreaming/
+│   │   ├── videoconferencing/
+│   │   ├── typeahead/
+│   │   ├── google-docs/
+│   │   ├── deployment/
+│   │   ├── payment/
+│   │   ├── chatgpt/
+│   │   └── README.md
+│   ├── 08_failures/                       # Real-world failure analysis
+│   │   ├── 01_introduction.md
+│   │   ├── 02_facebook-outage.md
+│   │   ├── 03_aws-kinesis-outage.md
+│   │   ├── 04_aws-outage.md
+│   │   ├── 05_lessons-learned.md
+│   │   └── README.md
+│   └── references/                        # Learning resources
+│       ├── books.md
+│       ├── papers.md
+│       └── tools.md
 ├── README.md
 ├── LICENSE
 ├── CONTRIBUTING.md
-└── CODE_OF_CONDUCT.md
+├── CODE_OF_CONDUCT.md
+└── lychee.toml                            # Link checker configuration
 ```
 
 ---
 
 ## 🔧 Development Guidelines
 
-### When Working with Prompts
+### When Working with System Design Content
 
-1. **Follow Established Patterns**: Use patterns from `playbook/02-patterns-and-anti-patterns.md`
-2. **Use Templates**: Leverage templates from `playbook/03-templates.md`
-3. **Apply Governance**: Follow guidelines in `playbook/04-governance.md`
-4. **Test Thoroughly**: Use evaluation approaches from `playbook/05-evaluation-and-testing.md`
+1. **Follow Zero-Copy Policy**: All content must be transformative, not reformative
+2. **Use Numbering**: Files must use `01_`, `02_`, etc. (never `00_`)
+3. **Keep Modular**: Recommended ≤150 lines per file (split, don't trim)
+4. **Create Original Diagrams**: Use Mermaid-first with ASCII fallback
+5. **Case Study Structure**: Follow standard structure (requirements, HLD, LLD, scalability, trade-offs)
 
-### When Writing Code Examples
+### When Creating Educational Content
 
-#### Python Examples (`src/python/`)
+#### File Naming
+- ✅ Use zero-padded numeric prefixes: `01_`, `02_`, etc.
+- ❌ **NEVER** use `00_` prefix - **NO EXCEPTIONS**
+- ✅ Use hyphens for multi-word names: `01_modern-system-design.md`
 
-- Use Azure OpenAI SDK (`openai` package with Azure configuration)
-- Follow PEP 8 style guidelines
-- Include proper error handling and logging
-- Use environment variables for configuration (never hardcode keys)
-- Include docstrings and type hints
+#### Content Structure
+- ✅ Recommended ≤150 lines per file
+- ✅ Split into multiple parts if content exceeds 150 lines
+- ✅ Never trim or condense content
+- ✅ Each part should be self-contained
 
-#### C# Examples (`src/csharp/`)
+#### YAML Frontmatter (Recommended for content files)
+```yaml
+---
+learning_level: "Beginner" | "Intermediate" | "Advanced"
+prerequisites: ["required knowledge", "prior concepts"]
+estimated_time: "25 minutes"
+learning_objectives:
+  - "Specific, measurable outcome 1"
+  - "Specific, measurable outcome 2"
+related_topics:
+  prerequisites: []
+  builds_upon: []
+  enables: []
+  cross_refs: []
+---
+```
 
-- Use Azure.AI.OpenAI NuGet package
-- Follow .NET coding conventions
-- Implement proper exception handling
-- Use configuration providers (appsettings.json, environment variables)
-- Include XML documentation comments
+### When Creating Case Studies
 
-#### Postman Examples (`src/postman/`)
-
-- Use environment variables for endpoints and keys
-- Include pre-request scripts for authentication
-- Add test scripts for response validation
-- Document expected responses
+#### Standard Structure
+Each case study should include:
+- `requirements.md` - Functional and non-functional requirements
+- `high-level-design.md` - System architecture and component interactions
+- `low-level-design.md` - Detailed design of components
+- `scalability.md` - Scaling strategies and considerations
+- `trade-offs.md` - Design decisions and their trade-offs
+- `diagrams/` - Case study specific diagrams
+  - `context-diagram.md` - C4 Level 1: System context
+  - `container-diagram.md` - C4 Level 2: Container architecture
+  - `component-diagram.md` - C4 Level 3: Component details
+  - `sequence-diagrams/` - Interaction flows and sequences
 
 ### Security Best Practices
 
 - ❌ **NEVER** commit API keys or secrets
-- ✅ **ALWAYS** use environment variables or Azure Key Vault
-- ✅ **ALWAYS** add `.env` files to `.gitignore`
-- ✅ **ALWAYS** use GitHub Secrets for CI/CD workflows
-
-### Configuration Management
-
-```bash
-# Required environment variables
-AZURE_OPENAI_ENDPOINT=https://your-resource.openai.azure.com/
-AZURE_OPENAI_KEY=your-key-here
-AZURE_OPENAI_DEPLOYMENT_NAME=your-deployment-name
-AZURE_OPENAI_API_VERSION=2024-02-15-preview
-```
+- ✅ **ALWAYS** use environment variables or secure configuration
+- ✅ **ALWAYS** add sensitive files to `.gitignore`
 
 ---
 
@@ -139,139 +216,75 @@ AZURE_OPENAI_API_VERSION=2024-02-15-preview
 - Include code fence language specifications
 - Follow markdownlint rules
 - Use UTF-8 encoding
+- Line length ~120 chars (tables/URLs may exceed)
 
-### Python Code
+### Diagrams
 
-- Run `flake8` for linting
-- Run `pytest` for testing
-- Use `black` for formatting
-- Maintain `requirements.txt` with pinned versions
-
-### C# Code
-
-- Build with `dotnet build`
-- Run tests with `dotnet test`
-- Follow .NET naming conventions
-- Keep NuGet packages updated
-
-### Postman Collections
-
-- Validate with Newman
-- Include comprehensive test scripts
-- Document all variables
-- Use collection-level authentication
+- **Mermaid-first**: Primary visualization method
+- **ASCII fallback**: Include ASCII fallback for compatibility
+- **Never embed copyrighted figures**: Create original diagrams
+- **Co-locate with content**: Diagrams in case study `diagrams/` folders
 
 ---
 
-## 🚀 CI/CD Workflows
+## 🚀 Content Creation Workflow
 
-### Python CI (`ci-python.yml`)
+### Transformative Workflow
 
-- Triggered on push/PR to `main`
-- Sets up Python environment
-- Installs dependencies
-- Runs linting (flake8)
-- Runs tests (pytest)
+1. **Source Intake**: Skim for intent and big ideas; don't copy notes verbatim
+2. **Concept Map**: Create fresh outline with different sectioning
+3. **Teach Differently**: Use new analogies, scenarios, datasets, use-cases
+4. **Produce Original Artifacts**: Explanations, Mermaid diagrams, minimal examples
+5. **Cross-Link**: Add references across sections
+6. **Similarity Audit**: Ensure no sentences/structures resemble source
+7. **Optional References**: Add "References/Inspired by" links (no copied phrasing)
 
-### .NET CI (`ci-dotnet.yml`)
+### Quality Gate Questions
 
-- Triggered on push/PR to `main`
-- Sets up .NET SDK
-- Restores NuGet packages
-- Builds solution
-- Runs tests
-
-### Postman Validation (`validate-postman.yml`)
-
-- Triggered on push/PR to `main`
-- Installs Newman
-- Validates collection structure
-- Runs collection tests (with mock or staging endpoint)
+Before publishing any content:
+1. ✅ Is this explanation clearer than the source material?
+2. ✅ Does this fit naturally in the learning progression?
+3. ✅ Would a learner understand this without the original source?
+4. ✅ Are the examples relevant and practical?
+5. ✅ Does this content add educational value beyond the reference?
+6. ✅ Is this content within 150 lines for effective delivery?
 
 ---
 
 ## 📝 Local Quality Checks
 
-Before committing changes, run these quality checks to ensure documentation meets standards:
+Before committing changes:
 
 ### Markdown Linting
-
-Run markdownlint to check all markdown files for style and formatting issues:
-
 ```bash
 npx markdownlint-cli2 "**/*.md"
 ```
 
-**Note**: Uses `.markdownlint-cli2.yaml` for configuration. The tool automatically reads `.markdownlint.json` for rule settings.
-
-**Common Issues to Fix:**
-
-- Missing language specification in code fences (MD040)
-- Missing blank lines around headings/lists/fences (MD022/MD031/MD032)
-- Incorrect list indentation (MD007 - use 2 spaces)
-
 ### Link Checking (Lychee via Docker)
-
-Run Lychee via Docker to check for broken links in markdown files:
-
 ```bash
 docker run --rm -v "${PWD}:/input:ro" lycheeverse/lychee --config /input/lychee.toml "/input/**/*.md"
 ```
 
-**Note**: Requires Docker to be installed and running. The configuration file `lychee.toml` at the repository root defines excluded patterns and timeout settings.
-
 ### Pre-Commit Checklist
-
-Before committing documentation changes:
 
 - [ ] Run markdownlint and fix any issues
 - [ ] Run Lychee link checker (if Docker available)
 - [ ] Verify all file references point to existing files
 - [ ] Check that code fences have language specifications
 - [ ] Ensure proper blank lines around headings and lists
-
----
-
-## �📝 Prompt Engineering Best Practices
-
-### Prompt Structure
-
-1. **Role Definition**: Define the AI's role and expertise
-2. **Context Setting**: Provide relevant background information
-3. **Task Description**: Clearly state what needs to be done
-4. **Output Format**: Specify expected response format
-5. **Constraints**: Define limitations and guardrails
-6. **Examples**: Provide few-shot examples when helpful
-
-### Common Patterns
-
-| Pattern           | Use Case               | Example                                |
-| ----------------- | ---------------------- | -------------------------------------- |
-| Instruction-based | Direct task completion | "Summarize the following text..."      |
-| Role-based        | Specialized expertise  | "You are a senior code reviewer..."    |
-| Chain-of-thought  | Complex reasoning      | "Think step by step..."                |
-| RAG               | Knowledge-grounded     | "Based on the following context..."    |
-| Evaluation        | Quality assessment     | "Rate the following on a scale..."     |
-
-### Anti-Patterns to Avoid
-
-- ❌ Vague or ambiguous instructions
-- ❌ Missing output format specification
-- ❌ No error handling guidance
-- ❌ Overly complex single prompts
-- ❌ Hardcoded values instead of variables
+- [ ] Verify file naming (no `00_` prefixes)
+- [ ] Check numbering consistency
 
 ---
 
 ## 🔗 Quick Links
 
-- [Playbook Overview](../playbook/01-overview.md)
-- [Prompt Patterns](../playbook/03-patterns-and-anti-patterns.md)
-- [Templates](../playbook/04-templates.md)
-- [Governance](../playbook/05-governance.md)
-- [Python Examples](../src/python/README.md)
-- [C# Examples](../src/csharp/README.md)
-- [Azure Setup](../infra/azure-guidance.md)
+- [Learning Path](docs/ROADMAP.md)
+- [Content Index](src/CONTENT_INDEX.md)
+- [System Design Principles](src/04_principles/)
+- [Building Blocks](src/05_building-blocks/)
+- [Case Studies](src/07_case-studies/)
+- [Contributing](CONTRIBUTING.md)
 
 ---
 
@@ -280,3 +293,16 @@ Before committing documentation changes:
 - **Issues**: Use GitHub Issues for bug reports and feature requests
 - **Discussions**: Use GitHub Discussions for questions and ideas
 - **Contributing**: See [CONTRIBUTING.md](../CONTRIBUTING.md) for guidelines
+
+---
+
+## 🔄 Update Verification Protocol
+
+**After ANY structural change, IMMEDIATELY update**:
+
+1. ✅ `.github/copilot-instructions.md` - Repository Structure section (THIS FILE)
+2. ✅ `README.md` - Repository Structure section
+3. ✅ `.cursor/rules/02_repository-structure.mdc` - Repository structure
+4. ✅ Relevant documentation files
+
+**Self-Check Question**: "Did I update the instruction files?" - If no, STOP and do it NOW.

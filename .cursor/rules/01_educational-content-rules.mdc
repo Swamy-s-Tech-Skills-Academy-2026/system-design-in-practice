@@ -10,12 +10,13 @@
 
 **IMPORTANT**: These rules apply differently based on content type:
 
-### Playbook Documentation (`playbook/` directory)
-- ✅ **File naming**: Must follow numbering conventions (01-, 02-, etc., no 00-)
+### Case Study Documentation (`src/07_case-studies/` directory)
+- ✅ **File naming**: Standard naming conventions (requirements.md, high-level-design.md, etc.)
 - ✅ **Line limits**: Recommended ≤150 lines, but flexible for comprehensive documentation
-- ⚠️ **YAML frontmatter**: NOT required (playbook files are documentation, not educational content)
+- ⚠️ **YAML frontmatter**: NOT required (case study files are documentation)
 - ✅ **Zero-copy policy**: Applies (content must be original)
 - ✅ **File references**: Must point to existing files
+- ✅ **Diagrams**: Co-located in `diagrams/` folder within each case study
 
 ### Educational Content (`src/01_introduction/`, `src/02_interview-prep/`, `src/03_foundations/`, `src/04_principles/`, `src/05_building-blocks/`, `src/06_patterns/`, `src/08_failures/`)
 - ✅ **File naming**: Must follow numbering conventions (01_, 02_, etc., no 00_)
