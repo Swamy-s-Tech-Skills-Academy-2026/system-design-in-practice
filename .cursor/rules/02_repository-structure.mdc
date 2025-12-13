@@ -1,0 +1,129 @@
+# Repository Structure & Context
+
+**Version**: 1.4  
+**Last Updated**: November 24, 2025
+
+---
+
+## 🧭 Repository Context
+
+**Prompt Engineering Playbook** is a comprehensive playbook that standardizes how prompts are designed, developed, tested, and integrated across C#, Python, and Postman workflows using Azure OpenAI. It provides:
+
+- Standard prompt patterns (instruction-based, role-based, RAG, chain-of-thought, evaluation)
+- Reusable prompt templates for common tasks
+- Governance guidelines and quality standards
+- Code integration examples in Python, C#, and Postman
+
+**Target Audience**: Engineering teams working with Azure OpenAI, prompt engineers, AI application developers
+
+**Purpose**: Ensures uniformity, reduces model misbehaviour, accelerates onboarding, improves productivity, and provides a consistent framework for enterprise-grade Azure OpenAI development
+
+### 🚨 CRITICAL: Repository Purpose
+
+**This repository (`prompt-engineering-playbook`) contains:**
+
+- ✅ **Playbook Documentation**: Core playbook framework and documentation
+- ✅ **Code Examples**: Working examples in Python, C#, and Postman
+- ✅ **Templates**: Reusable prompt templates
+- ✅ **Governance**: Review workflows, storage strategy, quality guidelines
+- ✅ **Infrastructure Guidance**: Azure setup and configuration guidance
+
+---
+
+## 📁 Repository Structure
+
+### Current Structure (As of November 24, 2025)
+
+```text
+prompt-engineering-playbook/
+├── .cursor/                               # Cursor AI configuration
+│   └── rules/                             # Project rules (this directory)
+│       ├── 01_educational-content-rules.mdc
+│       ├── 02_repository-structure.mdc
+│       ├── 03_quality-assurance.mdc
+│       ├── 04_markdown-standards.mdc
+│       ├── 05_primary-directives.mdc
+│       ├── 06_cross-domain-integration.mdc
+│       └── README.md
+├── .github/                               # GitHub configuration
+│   ├── workflows/                         # CI/CD workflows
+│   ├── ISSUE_TEMPLATE/                    # Issue templates
+│   ├── PULL_REQUEST_TEMPLATE.md           # PR template
+│   ├── copilot-instructions.md            # GitHub Copilot instructions
+│   └── prompts/                           # Reusable prompt templates
+│       ├── smart-prompt-framework-guide.md
+│       └── task-prompt.md
+├── playbook/                              # Core playbook framework
+│   ├── 01-overview.md
+│   ├── 01-structure-and-toc.md
+│   ├── 02-patterns-and-anti-patterns.md
+│   ├── 03-templates.md
+│   ├── 04-governance.md
+│   └── 05-evaluation-and-testing.md
+├── src/                                   # Code examples
+│   ├── python/
+│   ├── csharp/
+│   └── postman/
+├── infra/                                 # Infrastructure guidance
+│   └── azure-guidance.md
+├── docs/                                  # Additional documentation
+│   └── architecture-diagrams/
+├── LICENSE                                 # MIT License
+├── README.md                               # Main repository documentation
+├── CONTRIBUTING.md                         # Contribution guidelines
+├── CODE_OF_CONDUCT.md                     # Code of conduct
+└── .gitignore                             # Git ignore rules
+```
+
+---
+
+
+
+## 📁 Directory Structure Details
+
+### Playbook Directory
+
+The `playbook/` directory contains the core playbook framework:
+
+- **01-overview.md**: Introduction and getting started
+- **01-structure-and-toc.md**: Playbook organization and table of contents
+- **02-patterns-and-anti-patterns.md**: Prompt patterns and what to avoid
+- **03-templates.md**: Reusable prompt templates
+- **04-governance.md**: Review workflows, storage, quality guidelines
+- **05-evaluation-and-testing.md**: Testing and evaluation methodologies
+
+### Source Directory
+
+The `src/` directory contains working code examples:
+
+- **python/**: Python examples using Azure OpenAI SDK
+- **csharp/**: C# examples using .NET SDK
+- **postman/**: Postman collections for REST API testing
+
+### Infrastructure Directory
+
+The `infra/` directory contains infrastructure guidance:
+
+- **azure-guidance.md**: Azure OpenAI setup and configuration
+
+## 📞 Support & Escalation
+
+**Questions about prompt patterns?** → Check `playbook/02-patterns-and-anti-patterns.md`
+
+**Need a template?** → Check `playbook/03-templates.md`
+
+**Code examples?** → Check `src/` directory
+
+**Azure setup?** → Check `infra/azure-guidance.md`
+
+**Structure outdated?** → Update `.github/copilot-instructions.md` and `README.md` immediately
+
+---
+
+## For More Information
+
+- **Repository**: Check README.md for repository location
+- **Playbook Overview**: `playbook/01-overview.md`
+- **Structure Reference**: `playbook/01-structure-and-toc.md`
+- **GitHub Copilot Instructions**: `.github/copilot-instructions.md`
+- **Contributing**: `CONTRIBUTING.md`
