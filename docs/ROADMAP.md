@@ -31,47 +31,27 @@ This roadmap outlines the learning path and content organization for mastering s
 
 ## Phase 4 – Case Studies
 
-### Communication & Social
-- URL Shortener (TinyURL)
-- WhatsApp
-- Twitter
-- Instagram
-- Newsfeed System
-
-### Media & Content
-- YouTube
-- Web Crawler
-
-### Services & Platforms
-- Uber
-- Google Maps
-- Yelp (Proximity Service)
-- Quora
-
-### Productivity & Tools
-- Google Docs (Collaborative Editing)
-- Typeahead Suggestion
-- Deployment System
-
-### Financial & AI
+- URL Shortener
+- Rate Limiter
+- Notification System
 - Payment System
-- ChatGPT System
+- Chat Application
+- Social Media Feed
+- Distributed Cache
+- Search System
 
 ---
 
 ## Current Status
 
-✅ **Repository Setup** - Complete
+🚧 **Repository Setup** - In Progress
 
 - [x] Repository structure created
 - [x] Documentation framework established
-- [x] Migration plan created
-- [x] Content index established
-- [x] All directories and placeholder files created
-- [ ] Phase 1 content (Foundations) - *In Progress*
-- [ ] Phase 2 content (Building Blocks) - *In Progress*
-- [ ] Phase 3 content (Patterns) - *In Progress*
-- [ ] Phase 4 content (Case Studies) - *In Progress*
+- [ ] Phase 1 content (Foundations)
+- [ ] Phase 2 content (Building Blocks)
+- [ ] Phase 3 content (Patterns)
+- [ ] Phase 4 content (Case Studies)
 
 ---
 

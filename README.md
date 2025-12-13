@@ -30,44 +30,102 @@ system-design-in-practice/
 │
 ├── README.md
 ├── ROADMAP.md
-├── principles/
-│   ├── scalability.md
-│   ├── reliability.md
-│   ├── availability.md
-│   ├── consistency.md
-│   └── security.md
-│
-├── patterns/
-│   ├── caching.md
-│   ├── rate-limiting.md
-│   ├── circuit-breaker.md
-│   ├── cqrs.md
-│   └── event-driven.md
-│
-├── building-blocks/
-│   ├── load-balancers.md
-│   ├── databases.md
-│   ├── message-queues.md
-│   ├── search.md
-│   └── object-storage.md
-│
-├── case-studies/
-│   ├── url-shortener/
-│   │   ├── requirements.md
-│   │   ├── high-level-design.md
-│   │   ├── low-level-design.md
+├── src/
+│   ├── CONTENT_INDEX.md          # Complete content index
+│   │
+│   ├── introduction/             # Getting started
+│   │   ├── modern-system-design.md
+│   │   ├── why-learn-system-design.md
+│   │   └── course-structure.md
+│   │
+│   ├── interview-prep/           # Interview preparation
+│   │   ├── getting-ready.md
+│   │   ├── dos-and-donts.md
+│   │   ├── preparation-timeline.md
+│   │   ├── mock-interviews.md
+│   │   └── ai-evaluation.md
+│   │
+│   ├── foundations/              # Foundational concepts
+│   │   ├── abstractions.md
+│   │   ├── network-abstractions.md
+│   │   ├── consistency-models.md
+│   │   ├── failure-models.md
+│   │   └── back-of-envelope.md
+│   │
+│   ├── principles/               # System design principles
 │   │   ├── scalability.md
-│   │   └── trade-offs.md
-│   └── README.md
+│   │   ├── reliability.md
+│   │   ├── availability.md
+│   │   ├── consistency.md
+│   │   ├── security.md
+│   │   ├── maintainability.md
+│   │   └── fault-tolerance.md
+│   │
+│   ├── patterns/                 # Architectural patterns
+│   │   ├── caching.md
+│   │   ├── rate-limiting.md
+│   │   ├── circuit-breaker.md
+│   │   ├── cqrs.md
+│   │   └── event-driven.md
+│   │
+│   ├── building-blocks/          # Core building blocks
+│   │   ├── dns.md
+│   │   ├── load-balancers.md
+│   │   ├── databases.md
+│   │   ├── key-value-store.md
+│   │   ├── cdn.md
+│   │   ├── sequencer.md
+│   │   ├── monitoring.md
+│   │   ├── distributed-cache.md
+│   │   ├── message-queues.md
+│   │   ├── pub-sub.md
+│   │   ├── object-storage.md
+│   │   ├── search.md
+│   │   ├── distributed-logging.md
+│   │   ├── task-scheduler.md
+│   │   └── sharded-counters.md
+│   │
+│   ├── case-studies/             # End-to-end case studies
+│   │   ├── url-shortener/
+│   │   ├── youtube/
+│   │   ├── twitter/
+│   │   ├── instagram/
+│   │   ├── uber/
+│   │   ├── whatsapp/
+│   │   ├── google-maps/
+│   │   ├── yelp/
+│   │   ├── quora/
+│   │   ├── newsfeed/
+│   │   ├── web-crawler/
+│   │   ├── typeahead/
+│   │   ├── google-docs/
+│   │   ├── deployment/
+│   │   ├── payment/
+│   │   └── chatgpt/
+│   │
+│   ├── failures/                 # Real-world failure analysis
+│   │   ├── introduction.md
+│   │   ├── facebook-outage.md
+│   │   ├── aws-kinesis-outage.md
+│   │   ├── aws-outage.md
+│   │   └── lessons-learned.md
+│   │
+│   ├── diagrams/                 # Architecture diagrams
+│   │   ├── c4/
+│   │   └── sequence/
+│   │
+│   └── references/               # Learning resources
+│       ├── books.md
+│       ├── papers.md
+│       └── tools.md
 │
-├── diagrams/
-│   ├── c4/
-│   └── sequence/
+├── docs/
+│   ├── MIGRATION_PLAN.md         # Content migration strategy
+│   └── architecture-diagrams/
 │
-└── references/
-    ├── books.md
-    ├── papers.md
-    └── tools.md
+├── CONTRIBUTING.md
+├── CODE_OF_CONDUCT.md
+└── LICENSE
 ```
 
 This structure is **interview-ready, blog-ready, and extensible**.
@@ -77,9 +135,14 @@ This structure is **interview-ready, blog-ready, and extensible**.
 ## Getting Started
 
 1. Review the [ROADMAP.md](ROADMAP.md) to understand the learning path
-2. Start with the **principles/** folder for foundational concepts
-3. Explore **building-blocks/** to understand core components
-4. Study **case-studies/** for end-to-end system designs
+2. Check [src/CONTENT_INDEX.md](src/CONTENT_INDEX.md) for a complete topic index
+3. Start with **src/introduction/** for an overview
+4. Review **src/interview-prep/** if preparing for interviews
+5. Study **src/foundations/** for fundamental concepts
+6. Explore **src/principles/** for system design principles
+7. Learn **src/building-blocks/** to understand core components
+8. Study **src/case-studies/** for end-to-end system designs
+9. Review **src/failures/** to learn from real-world incidents
 
 ## Contributing
 

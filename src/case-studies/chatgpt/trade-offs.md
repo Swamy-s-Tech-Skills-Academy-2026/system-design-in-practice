@@ -1,4 +1,3 @@
-# Object Storage
+# Chatgpt - trade offs
 
 *Content coming soon...*
-
