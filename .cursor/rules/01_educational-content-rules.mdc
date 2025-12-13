@@ -1,4 +1,4 @@
-# Content Rules (Prompt Engineering Playbook)
+# Content Rules (System Design in Practice)
 
 **Version**: 1.1  
 **Last Updated**: December 2025  
@@ -41,7 +41,7 @@
 
 ## 🚫 Zero-Copy Policy (Non-Negotiable)
 
-**CRITICAL**: All content (playbook documentation and educational content) must be transformative, not reformative.
+**CRITICAL**: All content (case study documentation and educational content) must be transformative, not reformative.
 
 ❌ **NEVER** copy text verbatim from books, articles, websites, videos, or third-party materials  
 ❌ **NEVER** mirror a source's outline, section order, headings, or example sequence  
@@ -57,10 +57,10 @@
 **Step-by-step process for creating original educational content**:
 
 1. **Source Intake**: Skim for intent and big ideas; don't copy notes verbatim
-2. **Concept Map**: Create fresh outline with different sectioning tailored to the Prompt Engineering Playbook
+2. **Concept Map**: Create fresh outline with different sectioning tailored to System Design in Practice
 3. **Teach Differently**: Use new analogies, scenarios, datasets, use-cases (avoid source examples)
 4. **Produce Original Artifacts**: Explanations, Mermaid diagrams (with ASCII fallback), minimal examples
-5. **Cross-Link in Playbook**: Add references and connections across playbook sections
+5. **Cross-Link**: Add references and connections across system design sections
 6. **Similarity Audit**: Ensure no sentences/structures resemble source
 7. **Optional References**: Add "References/Inspired by" links (no copied phrasing)
 
@@ -72,7 +72,7 @@
 
 **APPLICABILITY**: This rule applies to educational content files (`src/01_introduction/`, `src/02_interview-prep/`, `src/03_foundations/`, `src/04_principles/`, `src/05_building-blocks/`, `src/06_patterns/`, `src/08_failures/`).
 
-**For Playbook Documentation**: The 150-line limit is a **recommendation**, not a strict requirement. Playbook files may exceed 150 lines if needed for comprehensive documentation.
+**For Case Study Documentation**: The 150-line limit is a **recommendation**, not a strict requirement. Case study files may exceed 150 lines if needed for comprehensive documentation.
 
 ✅ **Modular content** designed for focused 25-minute sessions  
 ✅ **Multi-Part Structure**: Complex topics split into Part 1, Part 2, ... Part N  
@@ -83,7 +83,7 @@
 
 **APPLICABILITY**: This rule applies to educational content files (`src/01_introduction/`, `src/02_interview-prep/`, `src/03_foundations/`, `src/04_principles/`, `src/05_building-blocks/`, `src/06_patterns/`, `src/08_failures/`).
 
-**For Playbook Documentation**: If playbook files exceed 150 lines, consider splitting for better organization, but it's not mandatory.
+**For Case Study Documentation**: If case study files exceed 150 lines, consider splitting for better organization, but it's not mandatory.
 
 **MANDATORY APPROACH** (Educational Content Only): When content exceeds 150 lines, **ALWAYS SPLIT** into multiple parts. **NEVER TRIM** or condense content.
 
@@ -118,7 +118,7 @@
 
 ### 5 Required Metadata Fields (Educational Content Only)
 
-**APPLICABILITY**: These metadata fields are REQUIRED for educational content files in `01_Reference/`, `02_Learning/`, and `03_Interview-Prep/` directories.
+**APPLICABILITY**: These metadata fields are RECOMMENDED for educational content files in `src/01_introduction/`, `src/02_interview-prep/`, `src/03_foundations/`, `src/04_principles/`, `src/05_building-blocks/`, `src/06_patterns/`, and `src/08_failures/` directories (when content is added).
 
 **NOT REQUIRED** for:
 - Playbook documentation files (`playbook/` directory)
@@ -152,7 +152,7 @@ related_topics:
 ✅ Use hyphens for multi-word names: `01_Software-Design-Principles/`
 
 **CRITICAL**: This rule applies to **ALL files** in the repository:
-- ✅ Educational content files (`01_Reference/`, `02_Learning/`)
+- ✅ Educational content files (`src/01_introduction/`, `src/02_interview-prep/`, etc.)
 - ✅ Documentation files (`docs/`)
 - ✅ Any numbered files anywhere in the repository
 - ❌ **NO EXCEPTIONS** - `00_` is NEVER allowed, even for meta/documentation files
@@ -167,20 +167,24 @@ related_topics:
 
 **CRITICAL**: File numbering MUST reflect logical learning dependencies, not arbitrary ordering.
 
-**Standard OOP Learning Progression** (Reference/01_Development/01_Software-Design-Principles/):
+**Standard System Design Learning Progression** (src/01_introduction/ → src/08_failures/):
 
-1. **01**: OOP Introduction - Understanding the paradigm
-2. **02**: Classes and Objects - Core building blocks
-3. **03**: Encapsulation and Abstraction - Data protection
-4. **04**: Inheritance and Polymorphism - Code reuse (fundamental OOP pillar)
-5. **05**: Composition and Interfaces - Advanced patterns (compares with inheritance)
-6. **06**: UML Class Relationships - Visualizing relationships
+1. **01_introduction**: Getting started with system design
+2. **02_interview-prep**: Interview preparation strategies
+3. **03_foundations**: Foundational concepts (abstractions, consistency, failures)
+4. **04_principles**: System design principles (availability, scalability, etc.)
+5. **05_building-blocks**: Core building blocks (DNS, load balancers, databases, etc.)
+6. **06_patterns**: Architectural patterns (caching, rate limiting, CQRS, etc.)
+7. **07_case-studies**: End-to-end case studies
+8. **08_failures**: Real-world failure analysis
 
 **Why This Order Matters**:
 
-- Inheritance (04) must come BEFORE Composition (05) because Composition discusses "favor composition over inheritance" - learners need to understand inheritance first
-- Inheritance is a fundamental OOP pillar; Composition is an alternative/comparison
-- UML (06) comes last as it visualizes all previous concepts
+- Foundations (03) must come before principles (04) - learners need basic concepts first
+- Principles (04) must come before building blocks (05) - understand principles before implementation
+- Building blocks (05) must come before patterns (06) - patterns build upon blocks
+- Case studies (07) come after patterns - apply knowledge to real systems
+- Failures (08) come last - learn from real-world mistakes
 
 **When Creating New Content**:
 
@@ -432,7 +436,7 @@ Before committing:
 
 ## 🎯 Interview Preparation Content Guidelines
 
-**CRITICAL**: All interview preparation content in `03_Interview-Prep/` must be **generic and company-agnostic**.
+**CRITICAL**: All interview preparation content in `src/02_interview-prep/` must be **generic and company-agnostic**.
 
 ### Generic Content Policy
 
