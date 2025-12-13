@@ -29,7 +29,10 @@ Design is about **trade-offs**, not perfect solutions.
 system-design-in-practice/
 │
 ├── README.md
-├── ROADMAP.md
+├── docs/
+│   ├── ROADMAP.md
+│   ├── MIGRATION_PLAN.md
+│   └── MIGRATION_SUMMARY.md
 ├── src/
 │   ├── CONTENT_INDEX.md          # Complete content index
 │   │
@@ -120,7 +123,9 @@ system-design-in-practice/
 │       └── tools.md
 │
 ├── docs/
-│   ├── MIGRATION_PLAN.md         # Content migration strategy
+│   ├── ROADMAP.md                 # Learning path and roadmap
+│   ├── MIGRATION_PLAN.md          # Content migration strategy
+│   ├── MIGRATION_SUMMARY.md       # Migration summary
 │   └── architecture-diagrams/
 │
 ├── CONTRIBUTING.md
@@ -134,7 +139,7 @@ This structure is **interview-ready, blog-ready, and extensible**.
 
 ## Getting Started
 
-1. Review the [ROADMAP.md](ROADMAP.md) to understand the learning path
+1. Review the [ROADMAP.md](docs/ROADMAP.md) to understand the learning path
 2. Check [src/CONTENT_INDEX.md](src/CONTENT_INDEX.md) for a complete topic index
 3. Start with **src/introduction/** for an overview
 4. Review **src/interview-prep/** if preparing for interviews
@@ -147,6 +152,19 @@ This structure is **interview-ready, blog-ready, and extensible**.
 ## Contributing
 
 We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+## Attribution & Learning Sources
+
+This repository represents a learning journey in system design. The content has been created through study and synthesis of knowledge from:
+
+- **Books**: Various system design and distributed systems textbooks and reference materials
+- **Video Courses**: Online courses and educational video content on system design
+- **Web Resources**: Articles, documentation, and technical blogs from the software engineering community
+- **Real-World Case Studies**: Analysis of publicly available system architectures and design patterns
+
+**Note**: All content in this repository is original and transformative. While inspired by various learning sources, the explanations, examples, diagrams, and case studies are created from first principles to provide a unique learning experience.
+
+---
 
 ## License
 
