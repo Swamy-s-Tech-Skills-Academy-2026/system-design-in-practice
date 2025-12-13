@@ -36,26 +36,26 @@ system-design-in-practice/
 ├── src/
 │   ├── CONTENT_INDEX.md          # Complete content index
 │   │
-│   ├── introduction/             # Getting started
+│   ├── 01_introduction/          # Getting started
 │   │   ├── modern-system-design.md
 │   │   ├── why-learn-system-design.md
 │   │   └── course-structure.md
 │   │
-│   ├── interview-prep/           # Interview preparation
+│   ├── 02_interview-prep/        # Interview preparation
 │   │   ├── getting-ready.md
 │   │   ├── dos-and-donts.md
 │   │   ├── preparation-timeline.md
 │   │   ├── mock-interviews.md
 │   │   └── ai-evaluation.md
 │   │
-│   ├── foundations/              # Foundational concepts
+│   ├── 03_foundations/           # Foundational concepts
 │   │   ├── abstractions.md
 │   │   ├── network-abstractions.md
 │   │   ├── consistency-models.md
 │   │   ├── failure-models.md
 │   │   └── back-of-envelope.md
 │   │
-│   ├── principles/               # System design principles
+│   ├── 04_principles/            # System design principles
 │   │   ├── scalability.md
 │   │   ├── reliability.md
 │   │   ├── availability.md
@@ -64,14 +64,7 @@ system-design-in-practice/
 │   │   ├── maintainability.md
 │   │   └── fault-tolerance.md
 │   │
-│   ├── patterns/                 # Architectural patterns
-│   │   ├── caching.md
-│   │   ├── rate-limiting.md
-│   │   ├── circuit-breaker.md
-│   │   ├── cqrs.md
-│   │   └── event-driven.md
-│   │
-│   ├── building-blocks/          # Core building blocks
+│   ├── 05_building-blocks/       # Core building blocks
 │   │   ├── dns.md
 │   │   ├── load-balancers.md
 │   │   ├── databases.md
@@ -88,7 +81,7 @@ system-design-in-practice/
 │   │   ├── task-scheduler.md
 │   │   └── sharded-counters.md
 │   │
-│   ├── case-studies/             # End-to-end case studies
+│   ├── 07_case-studies/          # End-to-end case studies
 │   │   ├── url-shortener/
 │   │   ├── youtube/
 │   │   ├── twitter/
@@ -100,13 +93,22 @@ system-design-in-practice/
 │   │   ├── quora/
 │   │   ├── newsfeed/
 │   │   ├── web-crawler/
+│   │   ├── livestreaming/
+│   │   ├── videoconferencing/
 │   │   ├── typeahead/
 │   │   ├── google-docs/
 │   │   ├── deployment/
 │   │   ├── payment/
 │   │   └── chatgpt/
 │   │
-│   ├── failures/                 # Real-world failure analysis
+│   ├── 06_patterns/              # Architectural patterns
+│   │   ├── caching.md
+│   │   ├── rate-limiting.md
+│   │   ├── circuit-breaker.md
+│   │   ├── cqrs.md
+│   │   └── event-driven.md
+│   │
+│   ├── 08_failures/              # Real-world failure analysis
 │   │   ├── introduction.md
 │   │   ├── facebook-outage.md
 │   │   ├── aws-kinesis-outage.md
@@ -139,13 +141,13 @@ This structure is **interview-ready, blog-ready, and extensible**.
 
 1. Review the [ROADMAP.md](docs/ROADMAP.md) to understand the learning path
 2. Check [src/CONTENT_INDEX.md](src/CONTENT_INDEX.md) for a complete topic index
-3. Start with **src/introduction/** for an overview
-4. Review **src/interview-prep/** if preparing for interviews
-5. Study **src/foundations/** for fundamental concepts
-6. Explore **src/principles/** for system design principles
-7. Learn **src/building-blocks/** to understand core components
-8. Study **src/case-studies/** for end-to-end system designs
-9. Review **src/failures/** to learn from real-world incidents
+3. Start with **src/01_introduction/** for an overview
+4. Review **src/02_interview-prep/** if preparing for interviews
+5. Study **src/03_foundations/** for fundamental concepts
+6. Explore **src/04_principles/** for system design principles
+7. Learn **src/05_building-blocks/** to understand core components
+8. Study **src/07_case-studies/** for end-to-end system designs
+9. Review **src/08_failures/** to learn from real-world incidents
 
 ## Contributing
 

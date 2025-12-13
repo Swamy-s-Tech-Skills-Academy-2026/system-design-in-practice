@@ -86,30 +86,32 @@ This document provides a comprehensive index of all topics covered in this repos
 ## Case Studies
 
 ### Communication & Social
-- [URL Shortener (TinyURL)](../case-studies/url-shortener/)
-- [WhatsApp](../case-studies/whatsapp/)
-- [Twitter](../case-studies/twitter/)
-- [Instagram](../case-studies/instagram/)
-- [Newsfeed System](../case-studies/newsfeed/)
+- [URL Shortener (TinyURL)](../07_case-studies/url-shortener/)
+- [WhatsApp](../07_case-studies/whatsapp/)
+- [Twitter](../07_case-studies/twitter/)
+- [Instagram](../07_case-studies/instagram/)
+- [Newsfeed System](../07_case-studies/newsfeed/)
 
 ### Media & Content
-- [YouTube](../case-studies/youtube/)
-- [Web Crawler](../case-studies/web-crawler/)
+- [YouTube](../07_case-studies/youtube/)
+- [Web Crawler](../07_case-studies/web-crawler/)
+- [Live Streaming](../07_case-studies/livestreaming/)
+- [Video Conferencing](../07_case-studies/videoconferencing/)
 
 ### Services & Platforms
-- [Uber](../case-studies/uber/)
-- [Google Maps](../case-studies/google-maps/)
-- [Yelp (Proximity Service)](../case-studies/yelp/)
-- [Quora](../case-studies/quora/)
+- [Uber](../07_case-studies/uber/)
+- [Google Maps](../07_case-studies/google-maps/)
+- [Yelp (Proximity Service)](../07_case-studies/yelp/)
+- [Quora](../07_case-studies/quora/)
 
 ### Productivity & Tools
-- [Google Docs (Collaborative Editing)](../case-studies/google-docs/)
-- [Typeahead Suggestion](../case-studies/typeahead/)
-- [Deployment System](../case-studies/deployment/)
+- [Google Docs (Collaborative Editing)](../07_case-studies/google-docs/)
+- [Typeahead Suggestion](../07_case-studies/typeahead/)
+- [Deployment System](../07_case-studies/deployment/)
 
 ### Financial & AI
-- [Payment System](../case-studies/payment/)
-- [ChatGPT System](../case-studies/chatgpt/)
+- [Payment System](../07_case-studies/payment/)
+- [ChatGPT System](../07_case-studies/chatgpt/)
 
 ## Failure Analysis
 

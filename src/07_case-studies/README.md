@@ -14,6 +14,8 @@ This directory contains end-to-end system design case studies.
 ### Media & Content
 - [YouTube](./youtube/) - *Coming soon*
 - [Web Crawler](./web-crawler/) - *Coming soon*
+- [Live Streaming](./livestreaming/) - *In Progress*
+- [Video Conferencing](./videoconferencing/) - *In Progress*
 
 ### Services & Platforms
 - [Uber](./uber/) - *Coming soon*
@@ -39,4 +41,7 @@ Each case study follows this structure:
 - `low-level-design.md` - Detailed design of components
 - `scalability.md` - Scaling strategies and considerations
 - `trade-offs.md` - Design decisions and their trade-offs
+- `diagrams/` - Case study specific diagrams (C4, sequence, architecture)
+
+**Note**: Diagrams are co-located with each case study for better organization and maintainability. The main `src/diagrams/` folder is reserved for generic/shared diagrams that apply across multiple case studies.
 

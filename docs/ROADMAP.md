@@ -41,6 +41,8 @@ This roadmap outlines the learning path and content organization for mastering s
 ### Media & Content
 - YouTube
 - Web Crawler
+- Live Streaming
+- Video Conferencing
 
 ### Services & Platforms
 - Uber
