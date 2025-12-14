@@ -270,3 +270,4 @@ Both require updating the same files after structural changes:
 
 *Comparison completed: December 13, 2025*
 
+
