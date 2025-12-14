@@ -7,11 +7,15 @@
 
 ## 🎯 Primary Directives
 
-### 1. Prompt Engineering Playbook Content Rules (MANDATORY)
+### 1. System Design in Practice Content Rules (MANDATORY)
 
-**All content creation must follow these rules without exception.**
+**All content creation must follow these rules, with applicability based on content type:**
 
-See: `01_educational-content-rules.mdc` for complete details.
+- **Educational Content** (`src/01_introduction/`, `src/02_interview-prep/`, `src/03_foundations/`, `src/04_principles/`, `src/05_building-blocks/`, `src/06_patterns/`, `src/08_failures/`): File naming, zero-copy policy, file references (YAML frontmatter recommended, line limits recommended)
+- **Case Studies** (`src/07_case-studies/`): Standard structure, zero-copy policy, diagrams co-located
+- **References** (`src/references/`): Logical naming, no numbering required
+
+See: `01_educational-content-rules.mdc` for complete details and applicability.
 
 ### 2. Automation-First Approach
 
@@ -53,7 +57,7 @@ See: `01_educational-content-rules.mdc` for complete details.
 
 1. ✅ **Check for `00_` prefix**: **NEVER ALLOWED** - Use `01_` instead
 2. ✅ **Verify scope**: Rule applies to **ALL files** including:
-   - Educational content (`01_Reference/`, `02_Learning/`)
+   - Educational content (`src/01_introduction/`, `src/02_interview-prep/`, etc.)
    - Documentation files (`docs/`)
    - Any numbered files anywhere in repository
 3. ✅ **Quick validation**: Run `Get-ChildItem -Recurse -Filter "*00_*"` to find violations
