@@ -36,7 +36,7 @@ Interaction flows showing step-by-step request processing:
 
 ## Architecture Diagram
 
-A comprehensive architecture diagram is also available in [High-Level Design](../02_high-level-design.md), showing all system components and their relationships.
+A comprehensive architecture diagram is also available in [High-Level Design](../03_high-level-design.md), showing all system components and their relationships.
 
 ## Diagram Standards
 

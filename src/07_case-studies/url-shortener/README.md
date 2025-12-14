@@ -11,16 +11,13 @@ This case study covers the complete design of a URL shortening service that can 
 ### Core Documentation
 
 1. **[Requirements](./01_requirements.md)** - Functional and non-functional requirements, scale considerations
-2. **[High-Level Design](./02_high-level-design.md)** - System architecture, components, and design decisions
-3. **[Low-Level Design](./03_low-level-design.md)** - Detailed implementation: token generation, database schemas, service logic
-4. **[Scalability](./04_scalability.md)** - Scaling strategies, analytics architecture, geographic distribution
-5. **[Trade-offs](./05_trade-offs.md)** - Design decisions, alternatives, and accepted trade-offs
-
-### Additional Topics
-
-- **[Back-of-Envelope](./06_back-of-envelope.md)** - Capacity planning calculations (storage, bandwidth, servers)
-- **[Observability](./07_observability.md)** - Monitoring, logging, distributed tracing, SLIs/SLOs
-- **[Security](./08_security.md)** - Authentication, rate limiting, URL validation, DDoS protection
+2. **[Back-of-Envelope](./02_back-of-envelope.md)** - Capacity planning calculations (storage, bandwidth, servers)
+3. **[High-Level Design](./03_high-level-design.md)** - System architecture, components, and design decisions
+4. **[Low-Level Design](./04_low-level-design.md)** - Detailed implementation: token generation, database schemas, service logic
+5. **[Scalability](./05_scalability.md)** - Scaling strategies, analytics architecture, geographic distribution
+6. **[Observability](./06_observability.md)** - Monitoring, logging, distributed tracing, SLIs/SLOs
+7. **[Security](./07_security.md)** - Authentication, rate limiting, URL validation, DDoS protection
+8. **[Trade-offs](./08_trade-offs.md)** - Design decisions, alternatives, and accepted trade-offs
 
 ### Diagrams
 

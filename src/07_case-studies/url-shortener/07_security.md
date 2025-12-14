@@ -258,5 +258,5 @@ Security is critical for URL shortening services to prevent abuse, protect users
 
 ---
 
-*For system architecture, see [High-Level Design](./02_high-level-design.md). For capacity planning, see [Back-of-Envelope](./06_back-of-envelope.md).*
+*For system architecture, see [High-Level Design](./03_high-level-design.md). For capacity planning, see [Back-of-Envelope](./02_back-of-envelope.md).*
 

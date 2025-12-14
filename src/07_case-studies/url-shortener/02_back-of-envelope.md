@@ -172,5 +172,5 @@ Back-of-the-envelope calculations help estimate resource requirements and valida
 
 ---
 
-*For scaling strategies, see [Scalability](./04_scalability.md). For design trade-offs, see [Trade-offs](./05_trade-offs.md).*
+*For system architecture, see [High-Level Design](./03_high-level-design.md). For scaling strategies, see [Scalability](./05_scalability.md).*
 

@@ -146,4 +146,5 @@ graph TB
 
 ---
 
-*For detailed implementation of token generation and service design, see [Low-Level Design](./03_low-level-design.md).*
+*For capacity planning, see [Back-of-Envelope](./02_back-of-envelope.md). For detailed implementation, see [Low-Level Design](./04_low-level-design.md).*
+

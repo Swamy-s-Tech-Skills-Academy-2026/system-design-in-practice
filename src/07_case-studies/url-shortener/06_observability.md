@@ -246,5 +246,5 @@ redirect requests | last 24 hours | group by hour
 
 ---
 
-*For analytics architecture, see [Scalability](./04_scalability.md). For capacity planning, see [Back-of-Envelope](./06_back-of-envelope.md).*
+*For analytics architecture, see [Scalability](./05_scalability.md). For capacity planning, see [Back-of-Envelope](./02_back-of-envelope.md).*
 
