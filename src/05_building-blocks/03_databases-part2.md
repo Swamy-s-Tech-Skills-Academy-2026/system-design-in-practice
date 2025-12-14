@@ -105,6 +105,7 @@ Most production systems use multiple database types, each optimized for specific
 ### Example: E-Commerce Platform
 
 **Scenario**: An e-commerce platform needs to handle:
+
 - Inventory management (prevent overselling)
 - Order history (growing data volume)
 - Product search and analytics
@@ -127,6 +128,7 @@ Most production systems use multiple database types, each optimized for specific
    - Subset of order information optimized for reporting
 
 **Workflow**:
+
 - New orders stored in relational database
 - After delivery, orders moved to Cassandra for permanent storage
 - Analytics queries use MongoDB to find relevant order IDs, then query both relational and columnar databases
@@ -145,4 +147,3 @@ Most production systems use multiple database types, each optimized for specific
 ---
 
 *This completes the database selection framework. For specific building blocks, see [Key-Value Stores](./04_key-value-store.md), [Object Storage](./11_object-storage.md), and [Search](./12_search.md).*
-

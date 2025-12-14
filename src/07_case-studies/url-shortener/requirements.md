@@ -52,6 +52,7 @@ The length of short URLs depends on:
 - Length 7: 62⁷ ≈ 3.5 trillion unique URLs
 
 **Decision Process**:
+
 1. Calculate total unique URLs needed: `requests_per_second × 60 × 60 × 24 × 365 × years`
 2. Determine minimum length: `n = ⌈log₆₂(total_urls)⌉`
 3. Add safety margin (typically use 7 characters for most use cases)
