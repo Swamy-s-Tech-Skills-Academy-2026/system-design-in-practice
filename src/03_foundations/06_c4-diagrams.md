@@ -10,9 +10,9 @@ related_topics:
   prerequisites: []
   builds_upon: []
   enables:
-    - ../../07_case-studies/url-shortener/diagrams/context-diagram.md
-    - ../../07_case-studies/url-shortener/diagrams/container-diagram.md
-    - ../../07_case-studies/url-shortener/diagrams/component-diagram.md
+    - ../../07_case-studies/url-shortener/diagrams/01_context-diagram.md
+    - ../../07_case-studies/url-shortener/diagrams/02_container-diagram.md
+    - ../../07_case-studies/url-shortener/diagrams/03_component-diagram.md
   cross_refs: []
 ---
 
@@ -171,9 +171,9 @@ graph TB
 
 Each case study in this repository includes C4 diagrams in the `diagrams/` folder:
 
-- `context-diagram.md` - System context (Level 1)
-- `container-diagram.md` - Container architecture (Level 2)
-- `component-diagram.md` - Component details (Level 3)
+- `01_context-diagram.md` - System context (Level 1)
+- `02_container-diagram.md` - Container architecture (Level 2)
+- `03_component-diagram.md` - Component details (Level 3)
 
 See the [URL Shortener case study](../../07_case-studies/url-shortener/diagrams/) for complete examples.
 
@@ -187,4 +187,4 @@ See the [URL Shortener case study](../../07_case-studies/url-shortener/diagrams/
 
 ---
 
-*Next: Apply C4 diagrams in [URL Shortener case study](../../07_case-studies/url-shortener/diagrams/context-diagram.md) or explore [other foundations](../README.md).*
+*Next: Apply C4 diagrams in [URL Shortener case study](../../07_case-studies/url-shortener/diagrams/01_context-diagram.md) or explore [other foundations](../README.md).*
