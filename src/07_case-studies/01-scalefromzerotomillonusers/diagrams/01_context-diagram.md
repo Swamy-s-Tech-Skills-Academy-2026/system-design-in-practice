@@ -22,7 +22,7 @@ C4Context
 
 ## ASCII Fallback
 
-```
+```text
 ┌─────────┐
 │  User   │
 └────┬────┘

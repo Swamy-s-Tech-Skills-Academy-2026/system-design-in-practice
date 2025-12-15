@@ -35,7 +35,7 @@ C4Component
 
 ## ASCII Fallback
 
-```
+```text
 ┌─────────────────────────────────┐
 │     Application Service         │
 │                                 │

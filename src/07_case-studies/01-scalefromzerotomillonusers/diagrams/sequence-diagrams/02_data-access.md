@@ -53,7 +53,7 @@ sequenceDiagram
 
 ## ASCII Fallback - Read Flow
 
-```
+```text
 User    API Gateway   App Service   Cache      Read Replica
  │           │             │           │            │
  │ GET /api/data/{id}      │           │            │
@@ -71,7 +71,7 @@ User    API Gateway   App Service   Cache      Read Replica
 
 ## ASCII Fallback - Write Flow
 
-```
+```text
 User    API Gateway   App Service   Primary DB   Cache    Message Queue
  │           │             │             │          │            │
  │ PUT /api/data/{id}      │             │          │            │
