@@ -25,115 +25,21 @@ Design is about **trade-offs**, not perfect solutions.
 
 ## Repository Structure
 
-> **📋 Single Source of Truth**: The complete and up-to-date repository structure is maintained in [`docs/RepositoryStructure.md`](docs/RepositoryStructure.md). This file should be referenced for the authoritative structure.
+> **📋 Single Source of Truth**: The complete and up-to-date repository structure is maintained in [`docs/RepositoryStructure.md`](docs/RepositoryStructure.md). This file contains the authoritative structure with all file names, conventions, and organization details.
 
-For the complete repository structure with all file names and details, see: **[docs/RepositoryStructure.md](docs/RepositoryStructure.md)**
+**For the complete repository structure**, see: **[docs/RepositoryStructure.md](docs/RepositoryStructure.md)**
 
 **Quick Overview**:
-```text
-system-design-in-practice/
-│
-├── README.md
-├── docs/
-│   ├── ROADMAP.md
-│   ├── RepositoryStructure.md             # Single source of truth for structure
-│   └── review-reports/
-├── src/
-│   ├── CONTENT_INDEX.md          # Complete content index
-│   │
-│   ├── 01_introduction/          # Getting started
-│   │   ├── modern-system-design.md
-│   │   ├── why-learn-system-design.md
-│   │   └── course-structure.md
-│   │
-│   ├── 02_interview-prep/        # Interview preparation
-│   │   ├── getting-ready.md
-│   │   ├── dos-and-donts.md
-│   │   ├── preparation-timeline.md
-│   │   ├── mock-interviews.md
-│   │   └── ai-evaluation.md
-│   │
-│   ├── 03_foundations/           # Foundational concepts
-│   │   ├── abstractions.md
-│   │   ├── network-abstractions.md
-│   │   ├── consistency-models.md
-│   │   ├── failure-models.md
-│   │   └── back-of-envelope.md
-│   │
-│   ├── 04_principles/            # System design principles
-│   │   ├── scalability.md
-│   │   ├── reliability.md
-│   │   ├── availability.md
-│   │   ├── consistency.md
-│   │   ├── security.md
-│   │   ├── maintainability.md
-│   │   └── fault-tolerance.md
-│   │
-│   ├── 05_building-blocks/       # Core building blocks
-│   │   ├── dns.md
-│   │   ├── load-balancers.md
-│   │   ├── databases.md
-│   │   ├── key-value-store.md
-│   │   ├── cdn.md
-│   │   ├── sequencer.md
-│   │   ├── monitoring.md
-│   │   ├── distributed-cache.md
-│   │   ├── message-queues.md
-│   │   ├── pub-sub.md
-│   │   ├── object-storage.md
-│   │   ├── search.md
-│   │   ├── distributed-logging.md
-│   │   ├── task-scheduler.md
-│   │   └── sharded-counters.md
-│   │
-│   ├── 07_case-studies/          # End-to-end case studies
-│   │   ├── url-shortener/
-│   │   ├── youtube/
-│   │   ├── twitter/
-│   │   ├── instagram/
-│   │   ├── uber/
-│   │   ├── whatsapp/
-│   │   ├── google-maps/
-│   │   ├── yelp/
-│   │   ├── quora/
-│   │   ├── newsfeed/
-│   │   ├── web-crawler/
-│   │   ├── livestreaming/
-│   │   ├── videoconferencing/
-│   │   ├── typeahead/
-│   │   ├── google-docs/
-│   │   ├── deployment/
-│   │   ├── payment/
-│   │   └── chatgpt/
-│   │
-│   ├── 06_patterns/              # Architectural patterns
-│   │   ├── caching.md
-│   │   ├── rate-limiting.md
-│   │   ├── circuit-breaker.md
-│   │   ├── cqrs.md
-│   │   └── event-driven.md
-│   │
-│   ├── 08_failures/              # Real-world failure analysis
-│   │   ├── introduction.md
-│   │   ├── facebook-outage.md
-│   │   ├── aws-kinesis-outage.md
-│   │   ├── aws-outage.md
-│   │   └── lessons-learned.md
-│   │
-│   └── references/               # Learning resources
-│       ├── books.md
-│       ├── papers.md
-│       └── tools.md
-│
-├── docs/
-│   └── ROADMAP.md                 # Learning path and roadmap
-│
-├── CONTRIBUTING.md
-├── CODE_OF_CONDUCT.md
-└── LICENSE
-```
 
-This structure is **interview-ready, blog-ready, and extensible**.
+- `src/01_introduction/` - Getting started with system design
+- `src/02_interview-prep/` - Interview preparation strategies
+- `src/03_foundations/` - Foundational concepts (abstractions, consistency, failures, C4 diagrams)
+- `src/04_principles/` - System design principles (availability, scalability, etc.)
+- `src/05_building-blocks/` - Core building blocks (DNS, load balancers, databases, etc.)
+- `src/06_patterns/` - Architectural patterns (caching, rate limiting, CQRS, etc.)
+- `src/07_case-studies/` - End-to-end case studies (URL Shortener, YouTube, Twitter, etc.)
+- `src/08_failures/` - Real-world failure analysis
+- `src/references/` - Learning resources (books, papers, tools)
 
 ---
 
