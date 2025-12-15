@@ -25,14 +25,19 @@ Design is about **trade-offs**, not perfect solutions.
 
 ## Repository Structure
 
+> **📋 Single Source of Truth**: The complete and up-to-date repository structure is maintained in [`docs/RepositoryStructure.md`](docs/RepositoryStructure.md). This file should be referenced for the authoritative structure.
+
+For the complete repository structure with all file names and details, see: **[docs/RepositoryStructure.md](docs/RepositoryStructure.md)**
+
+**Quick Overview**:
 ```text
 system-design-in-practice/
 │
 ├── README.md
 ├── docs/
 │   ├── ROADMAP.md
-│   ├── MIGRATION_PLAN.md
-│   └── MIGRATION_SUMMARY.md
+│   ├── RepositoryStructure.md             # Single source of truth for structure
+│   └── review-reports/
 ├── src/
 │   ├── CONTENT_INDEX.md          # Complete content index
 │   │

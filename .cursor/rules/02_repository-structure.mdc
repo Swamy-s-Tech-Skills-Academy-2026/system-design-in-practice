@@ -55,7 +55,13 @@
 
 ## 📁 Repository Structure
 
-### Current Structure (As of December 13, 2025)
+> **📋 Single Source of Truth**: The complete and up-to-date repository structure is maintained in [`docs/RepositoryStructure.md`](../../docs/RepositoryStructure.md). This file should be referenced for the authoritative structure. When the structure changes, update that file first, then update references here.
+
+For the complete repository structure, see: **[docs/RepositoryStructure.md](../../docs/RepositoryStructure.md)**
+
+### Current Structure Overview (As of December 15, 2025)
+
+**Note**: This is a summary. For the complete structure with all file names and details, refer to [`docs/RepositoryStructure.md`](../../docs/RepositoryStructure.md).
 
 ```text
 system-design-in-practice/
@@ -239,7 +245,7 @@ system-design-in-practice/
 
 **Looking for case studies?** → Check `src/07_case-studies/`
 
-**Structure outdated?** → Update `.github/copilot-instructions.md` and `README.md` immediately
+**Structure outdated?** → Update `docs/RepositoryStructure.md` first, then update references in `.github/copilot-instructions.md` and `README.md`
 
 ---
 

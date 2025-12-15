@@ -44,12 +44,14 @@ See: `01_educational-content-rules.mdc` for complete details and applicability.
 
 **After ANY structural change, IMMEDIATELY update**:
 
-1. ✅ `.github/copilot-instructions.md` - Repository Structure section
-2. ✅ `README.md` - Repository Structure section
-3. ✅ Relevant documentation files
-4. ✅ Run verification: `.\Quick-HealthCheck.ps1` from tools/psscripts/
+1. ✅ **`docs/RepositoryStructure.md`** - **UPDATE THIS FIRST** (Single source of truth)
+2. ✅ `.github/copilot-instructions.md` - Reference to RepositoryStructure.md
+3. ✅ `README.md` - Reference to RepositoryStructure.md
+4. ✅ `.cursor/rules/02_repository-structure.mdc` - Reference to RepositoryStructure.md
+5. ✅ Relevant documentation files
+6. ✅ Run verification: `.\Quick-HealthCheck.ps1` from tools/psscripts/
 
-**Self-Check Question**: "Did I update the instruction file?" - If no, STOP and do it NOW.
+**Self-Check Question**: "Did I update `docs/RepositoryStructure.md` first?" - If no, STOP and do it NOW.
 
 ### 4. File Naming Validation (CRITICAL)
 

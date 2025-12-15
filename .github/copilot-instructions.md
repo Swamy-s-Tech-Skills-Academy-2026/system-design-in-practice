@@ -37,6 +37,11 @@
 
 ## 📁 Repository Structure
 
+> **📋 Single Source of Truth**: The complete and up-to-date repository structure is maintained in [`docs/RepositoryStructure.md`](../docs/RepositoryStructure.md). This file should be referenced for the authoritative structure. When the structure changes, update that file first, then update references here.
+
+For the complete repository structure, see: **[docs/RepositoryStructure.md](../docs/RepositoryStructure.md)**
+
+**Quick Overview**:
 ```text
 system-design-in-practice/
 ├── .github/
@@ -46,7 +51,8 @@ system-design-in-practice/
 │   └── prompts/                           # Reusable prompt templates
 ├── docs/                                  # Documentation
 │   ├── ROADMAP.md                         # Learning path and roadmap
-│   └── WORKSPACE_REVIEW.md                # Workspace review report
+│   ├── RepositoryStructure.md             # Single source of truth for structure
+│   └── review-reports/                    # Review and migration reports
 ├── src/                                   # Educational content
 │   ├── CONTENT_INDEX.md                   # Complete content index
 │   ├── 01_introduction/                   # Getting started
@@ -420,9 +426,10 @@ docker run --rm -v "${PWD}:/input:ro" lycheeverse/lychee --config /input/lychee.
 
 **After ANY structural change, IMMEDIATELY update**:
 
-1. ✅ `.github/copilot-instructions.md` - Repository Structure section (THIS FILE)
-2. ✅ `README.md` - Repository Structure section
-3. ✅ `.cursor/rules/02_repository-structure.mdc` - Repository structure
-4. ✅ Relevant documentation files
+1. ✅ **`docs/RepositoryStructure.md`** - **UPDATE THIS FIRST** (Single source of truth)
+2. ✅ `.github/copilot-instructions.md` - Reference to RepositoryStructure.md (THIS FILE)
+3. ✅ `README.md` - Reference to RepositoryStructure.md
+4. ✅ `.cursor/rules/02_repository-structure.mdc` - Reference to RepositoryStructure.md
+5. ✅ Relevant documentation files
 
-**Self-Check Question**: "Did I update the instruction files?" - If no, STOP and do it NOW.
+**Self-Check Question**: "Did I update `docs/RepositoryStructure.md` first?" - If no, STOP and do it NOW.
