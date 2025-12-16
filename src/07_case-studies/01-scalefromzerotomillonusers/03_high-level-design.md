@@ -1,0 +1,124 @@
+# Scale from Zero to Million Users - High-Level Design
+
+## Architecture Evolution
+
+### Phase 1: Monolithic Architecture (0-1K Users)
+
+**Design**:
+- Single server hosting all components
+- Monolithic application
+- Single database (SQLite or MySQL)
+- Simple deployment
+
+**Components**:
+- Application Server
+- Database
+- Static File Storage
+
+**Characteristics**:
+- Simple to develop and deploy
+- Low operational overhead
+- Single point of failure
+- Limited scalability
+
+### Phase 2: Vertical Scaling (1K-100K Users)
+
+**Design**:
+- Larger server with more resources
+- Database read replicas
+- Basic caching (application-level)
+- Load balancer (optional)
+
+**Components**:
+- Application Server (larger instance)
+- Primary Database + Read Replicas
+- Cache Layer (Redis/Memcached)
+- Load Balancer
+
+**Characteristics**:
+- Improved performance
+- Better availability with replicas
+- Still single application instance
+- Cost-effective for medium scale
+
+### Phase 3: Horizontal Scaling (100K-1M Users)
+
+**Design**:
+- Multiple application servers
+- Database sharding or read replicas
+- Distributed caching
+- CDN for static content
+- Message queue for async processing
+
+**Components**:
+- Multiple Application Servers
+- Database Cluster (sharded or replicated)
+- Distributed Cache (Redis Cluster)
+- Load Balancer
+- CDN
+- Message Queue (Kafka/RabbitMQ)
+
+**Characteristics**:
+- High availability
+- Better fault tolerance
+- Improved performance
+- More complex operations
+
+### Phase 4: Distributed Microservices (1M+ Users)
+
+**Design**:
+- Microservices architecture
+- Service mesh for communication
+- Distributed databases
+- Global CDN
+- Event-driven architecture
+- Multi-region deployment
+
+**Components**:
+- Microservices (User Service, Data Service, etc.)
+- API Gateway
+- Service Mesh
+- Distributed Databases (NoSQL + SQL)
+- Global CDN
+- Event Streaming (Kafka)
+- Monitoring & Observability Stack
+
+**Characteristics**:
+- Maximum scalability
+- High fault tolerance
+- Global distribution
+- Complex architecture
+
+## Key Design Decisions
+
+### Database Strategy
+
+- **Phase 1-2**: Single SQL database
+- **Phase 3**: SQL with read replicas or sharding
+- **Phase 4**: Hybrid (SQL for transactions, NoSQL for scale)
+
+### Caching Strategy
+
+- **Phase 1**: No caching
+- **Phase 2**: Application-level caching
+- **Phase 3**: Distributed cache (Redis)
+- **Phase 4**: Multi-layer caching (CDN + Redis + Application)
+
+### Deployment Strategy
+
+- **Phase 1**: Single server deployment
+- **Phase 2**: Blue-green deployment
+- **Phase 3**: Rolling deployment with load balancer
+- **Phase 4**: Canary deployment, multi-region
+
+## Technology Stack Evolution
+
+| Component | Phase 1 | Phase 2 | Phase 3 | Phase 4 |
+|-----------|---------|---------|---------|---------|
+| **Application** | Monolith | Monolith | Monolith | Microservices |
+| **Database** | SQLite/MySQL | MySQL + Replicas | MySQL Sharded | SQL + NoSQL |
+| **Cache** | None | Redis | Redis Cluster | Multi-layer |
+| **Load Balancer** | None | Optional | Required | Global LB |
+| **CDN** | None | None | Optional | Required |
+| **Message Queue** | None | None | Optional | Required |
+
