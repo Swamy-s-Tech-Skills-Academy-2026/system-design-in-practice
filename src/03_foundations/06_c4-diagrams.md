@@ -130,7 +130,7 @@ graph TB
 ### Advantages Over Traditional Approaches
 
 | Aspect | C4 Model | Traditional UML |
-|--------|----------|-----------------|
+| ------ | -------- | --------------- |
 | **Learning Curve** | Low - intuitive hierarchy | High - many diagram types |
 | **Interview Suitability** | Excellent - structured approach | Poor - too detailed |
 | **Scalability** | Excellent - zoom in/out easily | Limited - fixed granularity |

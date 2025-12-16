@@ -136,7 +136,7 @@ Most production systems use multiple database types, each optimized for specific
 ## Decision Summary
 
 | Data Type | ACID Needed? | Query Pattern | Recommended Database |
-|-----------|--------------|--------------|---------------------|
+| --------- | ------------ | ------------- | -------------------- |
 | Structured | Yes | Various | Relational (MySQL, PostgreSQL) |
 | Structured | No | Simple | Either (choose based on team/infrastructure) |
 | Unstructured | No | Complex, varied | Document DB (MongoDB) |

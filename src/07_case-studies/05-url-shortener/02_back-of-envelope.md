@@ -175,7 +175,7 @@ Back-of-the-envelope calculations help estimate resource requirements and valida
 ## Summary Table
 
 | Resource | Calculation | Result |
-|----------|-------------|--------|
+| -------- | ----------- | ------ |
 | **Storage (10 years)** | 365B URLs × 0.5 KB | 300 TB (with growth) |
 | **Database Nodes** | 300 TB ÷ 7 TB/node | 50 nodes |
 | **Peak Read QPS** | 10B/day ÷ 86,400 sec × 10x | 1.16M req/sec |

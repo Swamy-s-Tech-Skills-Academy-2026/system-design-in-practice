@@ -278,7 +278,7 @@ When reviewing content, apply structured reasoning:
 ### Review Questions by Content Type
 
 | Content Type | Key Reasoning Questions |
-|--------------|------------------------|
+| ------------ | ----------------------- |
 | **Requirements** | Why these requirements? What drove the priorities? |
 | **High-Level Design** | Why this architecture? What alternatives were considered? |
 | **Low-Level Design** | Why these data structures/algorithms? What are the trade-offs? |

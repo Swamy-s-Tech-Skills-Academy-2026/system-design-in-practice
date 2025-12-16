@@ -172,7 +172,7 @@
 ### Summary
 
 | Metric | Value |
-|--------|-------|
+| ------ | ----- |
 | Peak RPS | 10 million |
 | Storage | 250 MB (active) |
 | Bandwidth | 88 Gbps |

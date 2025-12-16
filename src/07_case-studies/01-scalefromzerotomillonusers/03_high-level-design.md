@@ -126,7 +126,7 @@
 ## Technology Stack Evolution
 
 | Component | Phase 1 | Phase 2 | Phase 3 | Phase 4 |
-|-----------|---------|---------|---------|---------|
+| --------- | ------- | ------- | ------- | ------- |
 | **Application** | Monolith | Monolith | Monolith | Microservices |
 | **Database** | SQLite/MySQL | MySQL + Replicas | MySQL Sharded | SQL + NoSQL |
 | **Cache** | None | Redis | Redis Cluster | Multi-layer |
