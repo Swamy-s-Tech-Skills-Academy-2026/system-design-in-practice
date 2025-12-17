@@ -149,6 +149,9 @@ system-design-in-practice/
 │   │   ├── 05_lessons-learned.md
 │   │   └── README.md
 │   │
+│   ├── 09_ai-ml-systems/                  # Gen AI and ML system design
+│   │   └── README.md
+│   │
 │   └── references/                        # Learning resources
 │       ├── books.md
 │       ├── papers.md

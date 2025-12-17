@@ -14,7 +14,8 @@ This document provides a comprehensive index of all topics covered in this repos
 6. [Architectural Patterns](#architectural-patterns)
 7. [Case Studies](#case-studies)
 8. [Failure Analysis](#failure-analysis)
-9. [References](#references)
+9. [AI & ML Systems](#ai--ml-systems)
+10. [References](#references)
 
 ---
 
@@ -137,6 +138,10 @@ This document provides a comprehensive index of all topics covered in this repos
 - [AWS Kinesis Outage](08_failures/03_aws-kinesis-outage.md)
 - [AWS Outages](08_failures/04_aws-outage.md)
 - [Lessons Learned](08_failures/05_lessons-learned.md)
+ 
+## AI & ML Systems
+
+- [AI & ML Systems in Practice](09_ai-ml-systems/README.md)
 
 ## References
 
