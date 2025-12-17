@@ -116,12 +116,26 @@
 - **Phase 3**: Distributed cache (Redis)
 - **Phase 4**: Multi-layer caching (CDN + Redis + Application)
 
+### Traffic Management (DNS, Traffic Manager, Load Balancers)
+
+- **Phase 1**: Simple DNS record pointing directly to the single application server (or a basic public IP)
+- **Phase 2**: DNS still points to a single entry point, but traffic now lands on an external load balancer in front of the vertically scaled server
+- **Phase 3**: External load balancer becomes mandatory, distributing traffic across multiple stateless application servers; internal load balancers may be introduced between services and databases
+- **Phase 4**: DNS is fronted by a global traffic manager (geo-aware DNS) that can route users to the closest region or fail over between regions; each region uses external LBs for user traffic and internal LBs between microservices
+
 ### Deployment Strategy
 
 - **Phase 1**: Single server deployment
 - **Phase 2**: Blue-green deployment
 - **Phase 3**: Rolling deployment with load balancer
 - **Phase 4**: Canary deployment, multi-region
+
+### Operations & Delivery (CI/CD, DevOps, GitOps View)
+
+- **Phase 1**: Simple CI/CD pipeline (or even manual deployment) is sufficient; focus on getting a repeatable build and deploy flow
+- **Phase 2**: Introduce basic automated pipelines for blue-green deployments so you can switch traffic between old and new versions behind the load balancer
+- **Phase 3**: Use rolling deployments with health checks and auto-rollback; infrastructure is managed declaratively (infra-as-code) so new instances and environments can be created consistently
+- **Phase 4**: Apply GitOps-style workflows where infrastructure and application config live in version control; changes are applied through pipelines to multiple regions with canary and region-by-region rollouts
 
 ## Technology Stack Evolution
 

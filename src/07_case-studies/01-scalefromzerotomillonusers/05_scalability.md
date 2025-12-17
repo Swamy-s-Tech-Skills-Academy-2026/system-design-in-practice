@@ -51,7 +51,7 @@
 - Service decomposition
 - Independent scaling per service
 - Distributed databases
-- Global distribution
+- Global distribution (multiple regions, traffic managed at DNS and load balancer layers)
 
 **Benefits**:
 
@@ -114,6 +114,33 @@
 - Session affinity (if needed)
 - Weighted routing
 - Auto-scaling integration
+
+## Traffic Management (DNS and Traffic Manager)
+
+### Early Stages (Phase 1-2)
+
+- Simple DNS record pointing directly to the application endpoint (server or external load balancer)
+- Short TTLs can help when you need to move traffic to a new IP during incidents or migrations
+
+### Growth Stages (Phase 3-4)
+
+- Use DNS together with a traffic manager (geo-aware DNS or global routing service) to:
+  - Route users to the closest healthy region
+  - Fail over between regions during outages
+- Keep routing logic simple: start with active-passive (one primary region, one standby), then evolve to active-active as you mature
+
+## Deployment & Release Strategies (CI/CD, DevOps, GitOps)
+
+### Phase 1-2: Getting to Safe, Repeatable Deployments
+
+- Start with a basic CI/CD pipeline that builds, tests, and deploys the monolith
+- Introduce blue-green deployments so you can switch traffic between old and new versions behind the load balancer with minimal downtime
+
+### Phase 3-4: Operating at Scale
+
+- Use rolling deployments and canary releases so only a slice of traffic sees the new version first
+- Manage infrastructure declaratively (infra-as-code) and store configs in version control
+- Adopt GitOps-style workflows: desired state lives in git, and automated agents reconcile the running system to that state across environments and regions
 
 ## Monitoring and Auto-Scaling
 
