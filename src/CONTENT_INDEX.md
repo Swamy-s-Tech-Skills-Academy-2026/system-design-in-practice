@@ -142,6 +142,9 @@ This document provides a comprehensive index of all topics covered in this repos
 ## AI & ML Systems
 
 - [AI & ML Systems in Practice](09_ai-ml-systems/README.md)
+- [MLOps Foundations](09_ai-ml-systems/01_mlops-foundations.md)
+- [LLMOps Foundations](09_ai-ml-systems/02_llmops-foundations.md)
+- [PromptOps Patterns](09_ai-ml-systems/03_promptops-patterns.md)
 
 ## References
 

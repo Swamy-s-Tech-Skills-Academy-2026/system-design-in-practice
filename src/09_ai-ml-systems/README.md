@@ -25,6 +25,12 @@ This section focuses on **Gen AI System Design** and **ML System Design**, build
 - Feature stores and feature serving
 - Experimentation, A/B testing, and model monitoring
 
+### 3. Operational Topics (MLOps, LLMOps, PromptOps)
+
+- MLOps foundations (data, features, models, monitoring)
+- LLMOps foundations (RAG, orchestration, evaluation, safety)
+- PromptOps patterns (versioning, testing, and governance)
+
 ## Relationship to Other Sections
 
 - Builds on **Foundations** (`src/03_foundations/`) and **Principles** (`src/04_principles/`).
