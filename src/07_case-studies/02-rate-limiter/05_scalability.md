@@ -144,6 +144,7 @@ results = pipeline.execute()
 - Rate limiter instances in each region
 - Regional Redis clusters
 - Global configuration database
+- Global routing (DNS or traffic manager) directing clients to the closest healthy region
 
 **Benefits**:
 
@@ -171,6 +172,18 @@ results = pipeline.execute()
 ```python
 key = f"ratelimit:{region}:{key_type}:{key_value}:{rule_id}"
 ```
+
+## Traffic Management and Entry Points
+
+- In typical deployments, external clients do not call the rate limiter directly; they send requests to an API gateway or edge proxy whose public hostname is resolved via DNS.
+- External load balancers in front of the gateway distribute incoming traffic across multiple gateway instances, which in turn talk to the rate limiter cluster behind an internal load balancer.
+- In multi-region environments, a global routing layer (DNS-based or dedicated traffic manager) selects the nearest or healthiest region, while each region maintains its own rate limiter and Redis clusters.
+
+## Deployment and Release Strategies (CI/CD, DevOps, GitOps)
+
+- Run the rate limiter as an independently deployable service with its own CI/CD pipeline that runs functional, performance, and regression tests for rate limiting algorithms.
+- Use blue-green or canary deployments so that new versions of the rate limiter are first exposed to a small percentage of traffic while you watch key metrics (latency, error rate, allow/deny ratios, Redis load).
+- Treat both rate limit rules and infrastructure definitions as code stored in git, and adopt GitOps-style workflows where automated controllers reconcile production state from version-controlled manifests.
 
 ## Algorithm-Specific Scaling
 

@@ -272,6 +272,18 @@ graph TB
 - **Batch Operations**: Batch counter updates when possible
 - **Async Processing**: Non-blocking rate limit checks
 
+## Traffic Integration and Load Balancing
+
+- **External entrypoint**: Clients typically reach your system via DNS that resolves to an API gateway or edge endpoint. That gateway or edge proxy then calls the rate limiter.
+- **Cluster behind an internal LB**: Rate limiter instances are grouped behind an internal load balancer so callers don't need to know individual instance addresses.
+- **Multi-region awareness**: In multi-region setups, a global routing layer (DNS or traffic manager) sends users to the nearest region, and each region has its own rate limiter cluster behind regional load balancers.
+
+## Delivery & Operations (CI/CD and GitOps Practices)
+
+- Start with a simple CI/CD pipeline that builds, tests, and deploys the rate limiter as an internal service.
+- As traffic and risk increase, use staged rollouts (blue-green or canary) so new rate limiting logic only affects a small portion of traffic before full rollout.
+- Manage rate limit rules and infrastructure definitions as code in version control, and use GitOps-style workflows so changes are reviewed, auditable, and applied consistently across environments and regions.
+
 ## Security
 
 ### Authentication
