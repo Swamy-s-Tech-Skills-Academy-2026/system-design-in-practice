@@ -83,7 +83,7 @@ graph TB
     style DNS fill:#fff4e1
 ```
 
-### ASCII Fallback
+### ASCII Diagram Fallback
 
 ```text
 ┌─────────────┐
@@ -133,4 +133,3 @@ graph TB
 ---
 
 *Next: [Request Flow and Basic Architecture (Part 2)](./07_request-flow-and-basic-architecture-part2.md) - Separating components and scaling considerations.*
-

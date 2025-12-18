@@ -93,7 +93,7 @@ Modern APIs primarily use JSON (JavaScript Object Notation) for responses.
 
 ### REST Endpoint Example
 
-```
+```text
 GET /users/123
 ```
 
@@ -168,4 +168,3 @@ Multiple web servers with load balancer:
 
 *Previous: [Request Flow and Basic Architecture (Part 1)](./07_request-flow-and-basic-architecture-part1.md)*  
 *Next: Learn about [Scalability Principles](../../04_principles/03_scalability.md) or explore [DNS](../../05_building-blocks/01_dns.md) in detail.*
-
