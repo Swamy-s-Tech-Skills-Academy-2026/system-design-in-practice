@@ -33,4 +33,3 @@ This topic is split into two parts to stay within the repository's recommended 1
 ---
 
 *Related: [Scalability Principles](../04_principles/03_scalability.md) and the [Scale from Zero to Million Users](../07_case-studies/01-scalefromzerotomillonusers/README.md) case study.*
-
