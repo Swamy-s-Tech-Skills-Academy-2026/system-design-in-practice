@@ -39,7 +39,7 @@ sequenceDiagram
 
 ## ASCII Fallback
 
-```
+```text
 Phase 1 (0-1K Users): Monolithic
 ┌─────────────────────────────────┐
 │  Users                          │
@@ -116,23 +116,29 @@ Phase 4 (1M+ Users): Microservices
 ## Evolution Timeline
 
 ### Phase 1 → Phase 2
+
 **Trigger**: Database becomes bottleneck
 **Changes**:
+
 - Add read replicas
 - Separate read and write operations
 - Basic caching
 
 ### Phase 2 → Phase 3
+
 **Trigger**: Single server can't handle load
 **Changes**:
+
 - Add load balancer
 - Multiple application servers
 - Distributed cache
 - Database sharding or clustering
 
 ### Phase 3 → Phase 4
+
 **Trigger**: Monolith limits independent scaling
 **Changes**:
+
 - Break into microservices
 - API Gateway
 - Service mesh
@@ -142,7 +148,7 @@ Phase 4 (1M+ Users): Microservices
 ## Key Metrics at Each Phase
 
 | Phase | Users | QPS | Latency | Availability | Cost/Month |
-|-------|-------|-----|---------|--------------|------------|
+| ----- | ----- | --- | ------- | ------------ | ---------- |
 | 1 | 1K | 100 | <200ms | 99% | $50-100 |
 | 2 | 100K | 1K | <150ms | 99.5% | $300-500 |
 | 3 | 1M | 10K | <100ms | 99.9% | $2K-5K |
@@ -155,4 +161,3 @@ Phase 4 (1M+ Users): Microservices
 - **Canary Deployments**: Roll out changes incrementally
 - **Monitoring**: Monitor metrics during transitions
 - **Rollback Plan**: Always have a rollback strategy
-

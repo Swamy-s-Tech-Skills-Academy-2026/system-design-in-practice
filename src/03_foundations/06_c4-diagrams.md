@@ -10,9 +10,9 @@ related_topics:
   prerequisites: []
   builds_upon: []
   enables:
-    - ../../07_case-studies/url-shortener/diagrams/01_context-diagram.md
-    - ../../07_case-studies/url-shortener/diagrams/02_container-diagram.md
-    - ../../07_case-studies/url-shortener/diagrams/03_component-diagram.md
+    - ../07_case-studies/05-url-shortener/diagrams/01_context-diagram.md
+    - ../07_case-studies/05-url-shortener/diagrams/02_container-diagram.md
+    - ../07_case-studies/05-url-shortener/diagrams/03_component-diagram.md
   cross_refs: []
 ---
 
@@ -130,7 +130,7 @@ graph TB
 ### Advantages Over Traditional Approaches
 
 | Aspect | C4 Model | Traditional UML |
-|--------|----------|-----------------|
+| ------ | -------- | --------------- |
 | **Learning Curve** | Low - intuitive hierarchy | High - many diagram types |
 | **Interview Suitability** | Excellent - structured approach | Poor - too detailed |
 | **Scalability** | Excellent - zoom in/out easily | Limited - fixed granularity |
@@ -175,7 +175,7 @@ Each case study in this repository includes C4 diagrams in the `diagrams/` folde
 - `02_container-diagram.md` - Container architecture (Level 2)
 - `03_component-diagram.md` - Component details (Level 3)
 
-See the [URL Shortener case study](../../07_case-studies/url-shortener/diagrams/) for complete examples.
+See the [URL Shortener case study](../07_case-studies/05-url-shortener/diagrams/) for complete examples.
 
 ## Key Takeaways
 
@@ -187,4 +187,4 @@ See the [URL Shortener case study](../../07_case-studies/url-shortener/diagrams/
 
 ---
 
-*Next: Apply C4 diagrams in [URL Shortener case study](../../07_case-studies/url-shortener/diagrams/01_context-diagram.md) or explore [other foundations](../README.md).*
+*Next: Apply C4 diagrams in [URL Shortener case study](../07_case-studies/05-url-shortener/diagrams/01_context-diagram.md) or explore [other foundations](./README.md).*

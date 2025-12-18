@@ -47,7 +47,7 @@ sequenceDiagram
 
 ## ASCII Fallback
 
-```
+```text
 User → WebApp → API → Service → TokenMgr → TokenSvc
                               ↓
                            Cache
@@ -76,4 +76,3 @@ User → WebApp → API → Service → TokenMgr → TokenSvc
 ---
 
 *Next: [Redirection Flow](./02_redirection-flow.md)*
-

@@ -35,7 +35,7 @@ sequenceDiagram
 
 ## ASCII Fallback
 
-```
+```text
 User          WebApp        API Gateway   App Service   Auth Service  Database    Cache    Message Queue
  │              │              │              │              │            │          │            │
  │ Submit form  │              │              │              │            │          │            │
@@ -85,4 +85,3 @@ User          WebApp        API Gateway   App Service   Auth Service  Database  
 - **Weak password**: Return 400 Bad Request
 - **Rate limit exceeded**: Return 429 Too Many Requests
 - **Database error**: Return 500 Internal Server Error
-
