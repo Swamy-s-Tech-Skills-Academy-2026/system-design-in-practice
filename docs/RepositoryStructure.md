@@ -60,6 +60,9 @@ system-design-in-practice/
 │   │   ├── 04_failure-models.md
 │   │   ├── 05_back-of-envelope.md
 │   │   ├── 06_c4-diagrams.md
+│   │   ├── 07_scaling-fundamentals.md
+│   │   ├── 07_scaling-fundamentals-part1.md
+│   │   ├── 07_scaling-fundamentals-part2.md
 │   │   └── README.md
 │   │
 │   ├── 04_principles/                     # System design principles

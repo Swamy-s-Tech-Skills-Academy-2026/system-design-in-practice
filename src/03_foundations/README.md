@@ -10,6 +10,9 @@ This section covers the fundamental abstractions and concepts in distributed sys
 - [The Spectrum of Failure Models](./04_failure-models.md)
 - [Back-of-the-Envelope Calculations](./05_back-of-envelope.md)
 - [C4 Model for System Design](./06_c4-diagrams.md)
+- [Scaling Fundamentals (Overview)](./07_scaling-fundamentals.md)
+- [Scaling Fundamentals (Part 1)](./07_scaling-fundamentals-part1.md)
+- [Scaling Fundamentals (Part 2)](./07_scaling-fundamentals-part2.md)
 
 ---
 

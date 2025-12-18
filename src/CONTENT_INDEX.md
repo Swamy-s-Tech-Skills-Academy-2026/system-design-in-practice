@@ -41,6 +41,8 @@ This document provides a comprehensive index of all topics covered in this repos
 - [Failure Models](03_foundations/04_failure-models.md)
 - [Back-of-the-Envelope Calculations](03_foundations/05_back-of-envelope.md)
 - [C4 Model for System Design](03_foundations/06_c4-diagrams.md)
+- [Scaling Fundamentals (Part 1)](03_foundations/07_scaling-fundamentals-part1.md)
+- [Scaling Fundamentals (Part 2)](03_foundations/07_scaling-fundamentals-part2.md)
 
 ## System Design Principles
 
@@ -180,4 +182,4 @@ This document provides a comprehensive index of all topics covered in this repos
 
 ---
 
-Last Updated: December 16, 2025
+Last Updated: December 18, 2025
