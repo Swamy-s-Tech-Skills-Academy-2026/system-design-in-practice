@@ -85,3 +85,19 @@ User          WebApp        API Gateway   App Service   Auth Service  Database  
 - **Weak password**: Return 400 Bad Request
 - **Rate limit exceeded**: Return 429 Too Many Requests
 - **Database error**: Return 500 Internal Server Error
+
+## Interviewer Lens
+
+This flow demonstrates:
+
+- **Stateless application design**: AppService doesn't store session state, enabling horizontal scaling
+- **Defensive validation at multiple layers**: API Gateway (rate limiting) → AppService (business logic) → AuthService (security)
+- **Event-driven extensibility**: `user.created` event allows adding features (email notifications, analytics) without modifying core flow
+- **Cache invalidation strategy**: Proactive invalidation ensures fresh data after writes
+- **Separation of concerns**: AuthService handles security, AppService handles business logic
+
+**Common candidate mistakes to avoid**:
+- ❌ Storing passwords in plain text
+- ❌ Skipping rate limiting at gateway
+- ❌ Synchronous email sending (blocks response)
+- ❌ Forgetting cache invalidation after writes

@@ -114,8 +114,31 @@ User    API Gateway   App Service   Primary DB   Cache    Message Queue
 - **Cache Miss**: ~10-50ms latency (database query)
 - **Write Operation**: ~20-100ms latency (database write + cache invalidation)
 
+## Consistency Considerations
+
+- **Reads from replicas may be eventually consistent**: Replication lag (typically <100ms) means reads might not see latest writes immediately
+- **Cache invalidation ensures read-your-writes in most cases**: After writing, cache is invalidated, so subsequent reads from cache miss will hit database
+- **Strong consistency can be enforced**: Route reads to primary database when required (e.g., financial transactions, critical data)
+- **Trade-off**: Strong consistency reduces read scalability, eventual consistency improves performance
+
 ## Phase Differences
 
 - **Phase 1-2**: Direct database access, no cache
 - **Phase 3**: Cache-aside pattern with Redis
 - **Phase 4**: Multi-layer caching (L1: app cache, L2: Redis, L3: CDN)
+
+## Interviewer Lens
+
+This flow demonstrates:
+
+- **Cache-aside pattern**: Application manages cache, not database
+- **Read/write separation**: Reads from replicas, writes to primary
+- **Performance optimization**: Cache hits provide sub-millisecond latency
+- **Consistency trade-offs**: Balancing performance vs. data freshness
+- **Event-driven architecture**: Async processing via message queue
+
+**Common candidate mistakes to avoid**:
+- ❌ Forgetting cache invalidation after writes (stale data)
+- ❌ Reading from primary for all operations (bottleneck)
+- ❌ Not considering replication lag in consistency guarantees
+- ❌ Synchronous cache updates (blocks response)
