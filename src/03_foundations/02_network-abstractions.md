@@ -12,6 +12,7 @@ related_topics:
   builds_upon:
     - ./01_abstractions.md
   enables:
+    - ./02_network-abstractions-part2.md
     - ./07_request-flow-and-basic-architecture-part1.md
     - ../05_building-blocks/09_message-queues.md
   cross_refs: []
@@ -166,15 +167,6 @@ for result in search_service.stream_results(query="system design"):
 - Return cached data or default values
 - Graceful degradation
 
-## Key Takeaways
-
-1. **RPCs abstract network complexity** - make distributed calls look local
-2. **Choose RPC for internal services** - better performance and type safety
-3. **Use REST for public APIs** - universal, browser-friendly
-4. **Handle errors gracefully** - retry, circuit break, fallback
-5. **Consider streaming** - for large data or real-time updates
-
 ---
 
-*Previous: [Abstractions in System Design](./01_abstractions.md)*  
-*Next: Learn about [Consistency Models](./03_consistency-models.md) or explore [Request Flow](./07_request-flow-and-basic-architecture-part1.md).*
+*Next: Continue with [RPC Implementation Patterns and Error Handling](./02_network-abstractions-part2.md).*

@@ -12,6 +12,7 @@ related_topics:
   builds_upon:
     - ./02_network-abstractions.md
   enables:
+    - ./03_consistency-models-part2.md
     - ../04_principles/04_consistency.md
     - ../05_building-blocks/03_databases-part1.md
   cross_refs: []
@@ -175,15 +176,6 @@ Strong Consistency → Sequential → Causal → Eventual → Weak
 
 **Solution**: Sticky sessions, or route user's requests to same replica.
 
-## Key Takeaways
-
-1. **Consistency is a spectrum** - from strong to eventual
-2. **CAP theorem** - can't have all three (C, A, P)
-3. **PACELC** - considers normal operation too
-4. **Choose based on requirements** - what's acceptable for your use case
-5. **Trade-offs are inevitable** - consistency vs availability vs latency
-
 ---
 
-*Previous: [Network Abstractions: RPC](./02_network-abstractions.md)*  
-*Next: Learn about [Failure Models](./04_failure-models.md) or explore [Consistency Principles](../04_principles/04_consistency.md).*
+*Next: Continue with [Choosing Consistency Models and Common Patterns](./03_consistency-models-part2.md).*
