@@ -139,3 +139,100 @@
 - Business metrics
 - Cost tracking
 - User experience metrics
+
+## Failure Scenarios and Blast Radius Analysis
+
+### Scenario 1: Database Primary Failure (Phase 2-4)
+
+**Blast Radius**: 
+- **Affected**: All write operations, new user registrations, data updates
+- **Not Affected**: Read operations (can use replicas), cached data
+
+**Detection**:
+- Database health check fails
+- Write operation timeouts
+- Replication lag alerts
+
+**Mitigation**:
+- Automatic failover to replica (promote replica to primary)
+- Update connection strings
+- Verify data consistency after failover
+
+**Prevention**:
+- Regular database backups
+- Test failover procedures
+- Monitor replication lag
+- Use connection pooling with retry logic
+
+### Scenario 2: Cache Cluster Failure (Phase 3-4)
+
+**Blast Radius**:
+- **Affected**: All cached data, increased database load (5-10x increase)
+- **Not Affected**: System remains functional, but slower
+
+**Detection**:
+- Cache health check fails
+- Cache hit ratio drops to 0%
+- Database load increases dramatically
+
+**Mitigation**:
+- System continues operating (cache is performance optimization, not critical)
+- Scale database read replicas to handle increased load
+- Restore cache cluster or provision new one
+- Warm cache with frequently accessed data
+
+**Prevention**:
+- Cache cluster redundancy (multiple nodes)
+- Cache data replication
+- Monitor cache memory usage
+- Implement cache warming strategies
+
+### Scenario 3: Application Server Failure (Phase 3-4)
+
+**Blast Radius**:
+- **Affected**: Requests routed to failed server (if single server fails)
+- **Not Affected**: Other servers continue handling requests (if multiple servers)
+
+**Detection**:
+- Health check endpoint fails
+- Load balancer removes server from pool
+- Error rate increases temporarily
+
+**Mitigation**:
+- Load balancer automatically routes traffic away from failed server
+- Auto-scaling provisions new server instance
+- System continues operating with reduced capacity
+
+**Prevention**:
+- Multiple server instances (no single point of failure)
+- Health checks and automatic recovery
+- Graceful shutdown handling
+- Stateless application design
+
+### Scenario 4: Network Partition (Phase 4)
+
+**Blast Radius**:
+- **Affected**: Services in affected region, cross-region communication
+- **Not Affected**: Services in other regions continue operating
+
+**Detection**:
+- Cross-region latency spikes
+- Connection timeouts between regions
+- Regional health check failures
+
+**Mitigation**:
+- Each region operates independently (eventual consistency)
+- Route traffic to healthy regions
+- Queue cross-region operations for later sync
+
+**Prevention**:
+- Multi-region deployment
+- Regional data replication
+- Circuit breakers for cross-region calls
+- Eventual consistency design
+
+## Cross-References
+
+- Related: [Observability Building Block](../../05_building-blocks/07_monitoring.md)
+- Related: [Failure Models](../../03_foundations/04_failure-models.md)
+- Related: [Failure Analysis](../../08_failures/01_introduction.md)

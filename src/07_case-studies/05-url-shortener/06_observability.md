@@ -260,6 +260,97 @@ redirect requests | last 24 hours | group by hour
 - Latency degradation (>50% increase)
 - Cache hit ratio drops (>10% decrease)
 
+## Failure Scenarios and Blast Radius Analysis
+
+### Scenario 1: Cassandra Cluster Node Failure
+
+**Blast Radius**:
+- **Affected**: Write throughput reduced (fewer nodes), potential data unavailability if quorum lost
+- **Not Affected**: Read operations (can read from remaining nodes), cached redirects
+
+**Detection**:
+- Cassandra node health check fails
+- Write operation errors or timeouts
+- Cluster replication factor warnings
+
+**Mitigation**:
+- Remaining nodes continue serving requests
+- Auto-repair replicates data to new node
+- Scale cluster if needed to maintain quorum
+
+**Prevention**:
+- Replication factor of 3+ (survive 1-2 node failures)
+- Regular cluster health monitoring
+- Automated node replacement
+- Data backup and restore procedures
+
+### Scenario 2: Redis Cache Cluster Failure
+
+**Blast Radius**:
+- **Affected**: All cached URL mappings, 100x increase in database read load
+- **Not Affected**: System remains functional, redirects still work (slower)
+
+**Detection**:
+- Cache health check fails
+- Cache hit ratio drops to 0%
+- Database read QPS increases dramatically
+
+**Mitigation**:
+- System continues operating (cache is optimization, not critical)
+- Database handles increased load (designed for this)
+- Provision new cache cluster
+- Warm cache with hot URLs gradually
+
+**Prevention**:
+- Redis cluster with replication (sentinel mode)
+- Cache data persistence
+- Monitor cache memory usage
+- Implement cache warming for hot URLs
+
+### Scenario 3: Token Service Failure
+
+**Blast Radius**:
+- **Affected**: New URL shortening requests (can't get new token ranges)
+- **Not Affected**: Existing token ranges continue working, redirect operations
+
+**Detection**:
+- Token Service health check fails
+- Service instances can't get new token ranges
+- Error logs show token service connection failures
+
+**Mitigation**:
+- Service instances use existing token ranges (can continue for hours/days)
+- Failover to backup token service instance
+- Emergency: Use distributed ID generation (UUID) temporarily
+
+**Prevention**:
+- Token Service redundancy (multiple instances)
+- Pre-allocate larger token ranges (reduce frequency of calls)
+- Health checks and automatic failover
+- Token range caching at service instances
+
+### Scenario 4: CDN Failure
+
+**Blast Radius**:
+- **Affected**: Redirect latency increases (CDN → origin server), origin server load increases
+- **Not Affected**: System remains functional, redirects still work
+
+**Detection**:
+- CDN health check fails
+- Redirect latency increases
+- Origin server load increases
+
+**Mitigation**:
+- Traffic routes directly to origin servers
+- Scale origin servers to handle increased load
+- Use backup CDN provider if available
+
+**Prevention**:
+- Multi-CDN strategy (failover)
+- CDN health monitoring
+- Origin server capacity planning (handle CDN failure)
+- Geographic distribution
+
 ## Incident Response
 
 ### Runbooks
@@ -276,6 +367,12 @@ redirect requests | last 24 hours | group by hour
 1. **Level 1**: On-call engineer (auto-alert)
 2. **Level 2**: Team lead (if unresolved in 15 min)
 3. **Level 3**: Engineering manager (if unresolved in 1 hour)
+
+## Cross-References
+
+- Related: [Observability Building Block](../../05_building-blocks/07_monitoring.md)
+- Related: [Failure Models](../../03_foundations/04_failure-models.md)
+- Related: [Failure Analysis](../../08_failures/01_introduction.md)
 
 ---
 
