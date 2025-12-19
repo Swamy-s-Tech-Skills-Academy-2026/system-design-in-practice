@@ -4,8 +4,8 @@ prerequisites: ["Reliability (Part 1)", "Understanding of availability"]
 estimated_time: "25 minutes"
 learning_objectives:
   - "Apply testing strategies for reliability"
-  - "Design monitoring and observability for reliability"
-  - "Implement reliability best practices"
+  - "Understand monitoring and observability for reliability"
+  - "Design systems with reliability as a first-class concern"
 related_topics:
   prerequisites:
     - ./02_reliability.md
@@ -13,11 +13,11 @@ related_topics:
     - ./02_reliability.md
   enables:
     - ./05_fault-tolerance.md
-    - ../05_building-blocks/03_databases-part1.md
+    - ../05_building-blocks/07_monitoring.md
   cross_refs: []
 ---
 
-# Reliability (Part 2): Testing, Monitoring, and Best Practices
+# Reliability (Part 2): Testing and Monitoring
 
 ## Testing for Reliability
 
@@ -26,12 +26,11 @@ related_topics:
 **Purpose**: Test individual components in isolation.
 
 **Focus**:
-- Input validation
-- Error handling
+- Correctness of logic
 - Edge cases
-- Boundary conditions
+- Error handling
 
-**Example**: Test payment processing with invalid amounts, missing fields.
+**Example**: Test payment calculation with various inputs.
 
 ### 2. Integration Testing
 
@@ -41,21 +40,19 @@ related_topics:
 - API contracts
 - Data flow
 - Error propagation
-- Timeout handling
 
-**Example**: Test user service calling payment service with various scenarios.
+**Example**: Test payment service calling user service and database.
 
 ### 3. Chaos Engineering
 
 **Purpose**: Test system behavior under failure conditions.
 
-**Practices**:
-- Inject failures (kill processes, network partitions)
-- Observe system behavior
-- Verify recovery mechanisms
-- Identify weaknesses
+**Techniques**:
+- Inject failures (kill processes, drop network)
+- Simulate load spikes
+- Test recovery mechanisms
 
-**Example**: Randomly kill database connections → verify system handles gracefully.
+**Example**: Randomly kill database connections to test retry logic.
 
 ### 4. Load Testing
 
@@ -65,9 +62,8 @@ related_topics:
 - Performance degradation
 - Resource exhaustion
 - Error rates under load
-- Recovery after load
 
-**Example**: Simulate 10x normal traffic → verify system maintains reliability.
+**Example**: Simulate 10x normal traffic to find breaking points.
 
 ## Monitoring for Reliability
 
@@ -78,94 +74,109 @@ related_topics:
 - Alert: > 1%
 
 **Latency**: Response time distribution
-- p50, p95, p99 percentiles
-- Alert on p99 spikes
+- Track: p50, p95, p99
+- Alert: p99 > SLA threshold
 
 **Throughput**: Requests per second
-- Monitor for drops (indicates issues)
-- Alert on sudden decreases
+- Monitor: Trends, capacity limits
+- Alert: Sudden drops
 
-### Logging Strategy
+**Resource Usage**: CPU, memory, disk
+- Monitor: Trends, capacity
+- Alert: Approaching limits
 
-**What to Log**:
-- All errors with context
-- Performance metrics
-- State changes
-- User actions (for debugging)
+### Observability
 
-**Log Levels**:
-- **ERROR**: System errors, failures
-- **WARN**: Potential issues, degraded performance
-- **INFO**: Important events, state changes
-- **DEBUG**: Detailed information for troubleshooting
+**Logging**: Record events for debugging
+- Structured logs (JSON)
+- Appropriate log levels
+- Include context (request ID, user ID)
 
-### Alerting
+**Tracing**: Track requests across services
+- Distributed tracing
+- Identify bottlenecks
+- Understand failure paths
 
-**When to Alert**:
-- Error rate exceeds threshold
-- Latency spikes
-- Service unavailable
-- Resource exhaustion
+**Metrics**: Quantitative measurements
+- Counters, gauges, histograms
+- Time-series data
+- Dashboards and alerts
 
-**Alert Levels**:
-- **Critical**: System down, data loss
-- **Warning**: Degraded performance, high error rate
-- **Info**: Capacity thresholds, scaling events
+## Reliability Patterns in Practice
 
-## Reliability Best Practices
+### Pattern 1: Health Checks
 
-### 1. Defensive Programming
+**Implementation**: Endpoint that reports system health.
 
-**Principle**: Assume inputs are invalid, components will fail.
+```python
+@app.get("/health")
+def health_check():
+    checks = {
+        "database": check_database(),
+        "cache": check_cache(),
+        "external_api": check_external_api()
+    }
+    if all(checks.values()):
+        return {"status": "healthy"}
+    return {"status": "unhealthy", "checks": checks}, 503
+```
 
-**Practices**:
-- Validate all inputs
-- Check return values
-- Handle null/empty cases
-- Verify assumptions
+**Use**: Load balancers, orchestration systems, monitoring.
 
-### 2. Fail Fast
+### Pattern 2: Retry Logic
 
-**Principle**: Detect and report errors immediately.
+**Implementation**: Retry transient failures with backoff.
 
-**Benefits**:
-- Easier debugging
-- Prevents cascading failures
-- Clear error messages
+```python
+def call_service_with_retry(max_retries=3):
+    for attempt in range(max_retries):
+        try:
+            return service.call()
+        except TransientError:
+            if attempt < max_retries - 1:
+                time.sleep(2 ** attempt)  # Exponential backoff
+            else:
+                raise
+```
 
-**Example**: Validate request format before processing → return error immediately if invalid.
+**Use**: Network calls, database operations, external APIs.
 
-### 3. Idempotent Operations
+### Pattern 3: Circuit Breaker
 
-**Principle**: Operations can be safely retried.
+**Implementation**: Stop calling failing service.
 
-**Benefits**:
-- Safe retry on failures
-- Prevents duplicate processing
-- Handles network issues
+```python
+class CircuitBreaker:
+    def __init__(self, failure_threshold=5):
+        self.failures = 0
+        self.threshold = failure_threshold
+        self.state = "closed"
+    
+    def call(self, func):
+        if self.state == "open":
+            raise CircuitOpenError()
+        try:
+            result = func()
+            self.failures = 0
+            return result
+        except Exception:
+            self.failures += 1
+            if self.failures >= self.threshold:
+                self.state = "open"
+            raise
+```
 
-**Example**: Payment with idempotency key → retry safe if network fails.
-
-### 4. Timeout Everything
-
-**Principle**: Never wait indefinitely.
-
-**Benefits**:
-- Prevents hanging requests
-- Faster failure detection
-- Better resource utilization
-
-**Example**: Database query timeout after 5 seconds → fail fast instead of hanging.
+**Use**: External dependencies, repeated failures.
 
 ## Key Takeaways
 
-1. **Test comprehensively** - unit, integration, chaos, load testing
-2. **Monitor proactively** - error rates, latency, throughput
-3. **Log everything** - errors, metrics, state changes
-4. **Alert appropriately** - critical issues need immediate attention
-5. **Practice defensive programming** - assume failures, validate inputs
+1. **Test failure scenarios** - chaos engineering reveals weaknesses
+2. **Monitor everything** - metrics, logs, traces
+3. **Set clear targets** - error rates, latency SLAs
+4. **Automate recovery** - retry, circuit breakers, failover
+5. **Learn from failures** - post-mortems, continuous improvement
 
 ---
 
 *Previous: [Reliability (Part 1)](./02_reliability.md)*  
-*Next: Learn about [Fault Tolerance](./05_fault-tolerance.md) or explore [Database Selection](../05_building-blocks/03_databases-part1.md).*
+*Next: Learn about [Fault Tolerance](./05_fault-tolerance.md) or explore [Monitoring](../05_building-blocks/07_monitoring.md).*

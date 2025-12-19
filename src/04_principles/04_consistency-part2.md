@@ -3,9 +3,9 @@ learning_level: "Intermediate"
 prerequisites: ["Consistency (Part 1)", "CAP theorem basics"]
 estimated_time: "25 minutes"
 learning_objectives:
-  - "Apply consistency design patterns in practice"
-  - "Balance consistency with performance and availability"
-  - "Choose appropriate consistency strategies for different scenarios"
+  - "Apply consistency design patterns to real-world scenarios"
+  - "Understand consistency trade-offs in production systems"
+  - "Design systems with appropriate consistency guarantees"
 related_topics:
   prerequisites:
     - ./04_consistency.md
@@ -17,152 +17,105 @@ related_topics:
   cross_refs: []
 ---
 
-# Consistency (Part 2): Design Patterns and Practical Applications
+# Consistency (Part 2): Design Patterns and Trade-offs
 
 ## Design Patterns for Consistency
 
-### Pattern 1: Read Replicas
+### Pattern 1: Read-Your-Writes
 
-**Concept**: Route reads to replicas, writes to primary.
-
-**Benefits**:
-- Scale read operations
-- Reduce load on primary
-- Geographic distribution
-
-**Consistency Trade-off**:
-- Replicas may have slight lag
-- Acceptable for most read scenarios
-
-**Example**: User profile reads → replica, profile updates → primary.
-
-### Pattern 2: Quorum Reads/Writes
-
-**Concept**: Require majority of nodes to agree.
-
-**How it works**:
-- Write: Must write to (N/2 + 1) nodes
-- Read: Must read from (N/2 + 1) nodes
-
-**Benefits**:
-- Strong consistency
-- Handles node failures
-
-**Example**: 5-node cluster → write to 3 nodes, read from 3 nodes.
-
-### Pattern 3: Version Vectors
-
-**Concept**: Track version of each update.
-
-**How it works**:
-- Each node maintains version vector
-- Compare vectors to detect conflicts
-- Resolve conflicts based on policy
-
-**Benefits**:
-- Detect conflicts
-- Track causality
-- Enable conflict resolution
-
-**Example**: Distributed document editing → version vectors track changes.
-
-### Pattern 4: Event Sourcing
-
-**Concept**: Store events instead of current state.
-
-**How it works**:
-- All changes stored as events
-- Current state derived from events
-- Replay events to reconstruct state
-
-**Benefits**:
-- Complete audit trail
-- Time travel (reconstruct any point in time)
-- Strong consistency possible
-
-**Example**: Bank account → store transactions (events) → balance = sum of transactions.
-
-## Practical Applications
-
-### Financial Systems
-
-**Requirement**: Strong consistency
-
-**Why**: Money must be accurate, no double-spending.
+**Requirement**: After writing, subsequent reads must see your write.
 
 **Implementation**:
-- ACID transactions
-- Quorum writes
-- Synchronous replication
+- Route reads to same replica that handled write
+- Use session affinity
+- Strong consistency for user's own data
 
-**Trade-off**: Higher latency, but correctness critical.
+**Example**: After posting a comment, you should immediately see it.
 
-### Social Media
+**Trade-offs**:
+- ✅ Better user experience
+- ⚠️ Requires session management
+- ⚠️ May increase latency
 
-**Requirement**: Eventual consistency
+### Pattern 2: Monotonic Reads
 
-**Why**: Acceptable if posts take seconds to propagate.
-
-**Implementation**:
-- Asynchronous replication
-- Read replicas
-- Caching
-
-**Trade-off**: Temporary inconsistencies, but high availability.
-
-### E-Commerce
-
-**Requirement**: Mixed consistency
-
-**Why**: Different data has different requirements.
+**Requirement**: Once you read a value, you never see an older value.
 
 **Implementation**:
-- **Inventory**: Strong consistency (prevent overselling)
-- **Product catalog**: Eventual consistency (acceptable lag)
-- **Recommendations**: Eventual consistency (not critical)
+- Route all reads for a user to the same replica
+- Use version numbers
+- Sticky sessions
 
-**Trade-off**: Right consistency for each use case.
+**Example**: Reading your account balance should never show a lower amount.
 
-## Consistency Decision Framework
+**Trade-offs**:
+- ✅ Prevents confusing user experience
+- ⚠️ Limits load balancing flexibility
+- ⚠️ Requires replica selection logic
 
-### Step 1: Assess Criticality
+### Pattern 3: Causal Consistency
 
-**Question**: What happens if data is stale?
+**Requirement**: Causally related updates are seen in order.
 
-- **Critical** (money, medical) → Strong consistency
-- **Important** (user profiles) → Read-your-writes
-- **Acceptable** (social posts) → Eventual consistency
+**Implementation**:
+- Track causal dependencies
+- Vector clocks
+- Dependency graphs
 
-### Step 2: Evaluate Update Frequency
+**Example**: Replies must appear after the original post.
 
-**Question**: How often is data updated?
+**Trade-offs**:
+- ✅ Preserves important relationships
+- ⚠️ More complex to implement
+- ⚠️ Requires dependency tracking
 
-- **Frequent** → Consider eventual consistency
-- **Rare** → Strong consistency feasible
+## Consistency in Production Systems
 
-### Step 3: Consider Geographic Distribution
+### Example 1: E-Commerce Platform
 
-**Question**: Are users globally distributed?
+**Requirements**:
+- Inventory must be accurate (strong consistency)
+- Product descriptions can be eventually consistent
+- Shopping cart: session consistency
 
-- **Global** → Eventual consistency often necessary
-- **Single region** → Strong consistency possible
+**Design**:
+- Inventory: Strong consistency (prevent overselling)
+- Product catalog: Eventual consistency (acceptable delay)
+- Shopping cart: Session consistency (user's view)
 
-### Step 4: Analyze Read/Write Patterns
+### Example 2: Social Media
 
-**Question**: What's the read/write ratio?
+**Requirements**:
+- Posts: Eventual consistency (acceptable)
+- Likes: Eventual consistency (acceptable)
+- Direct messages: Strong consistency (important)
 
-- **Read-heavy** (10:1) → Eventual consistency with caching
-- **Write-heavy** (1:1) → Consider strong consistency
+**Design**:
+- Posts: Eventual consistency across regions
+- Likes: Eventual consistency (counts can be approximate)
+- Messages: Strong consistency (must be accurate)
+
+### Example 3: Financial System
+
+**Requirements**:
+- Account balances: Strong consistency (critical)
+- Transaction history: Strong consistency (audit requirement)
+- Analytics: Eventual consistency (acceptable)
+
+**Design**:
+- Core transactions: Strong consistency
+- Read replicas: For reporting only
+- Analytics: Separate eventually consistent system
 
 ## Key Takeaways
 
-1. **Choose right pattern** - read replicas, quorum, version vectors, event sourcing
-2. **Match consistency to use case** - financial needs strong, social needs eventual
-3. **Use decision framework** - assess criticality, frequency, distribution, patterns
-4. **Balance trade-offs** - consistency vs availability vs performance
-5. **Monitor consistency** - track replication lag, detect conflicts
+1. **Choose consistency level based on requirements** - not all data needs strong consistency
+2. **Use patterns for common scenarios** - read-your-writes, monotonic reads, causal consistency
+3. **Balance consistency with performance** - strong consistency has costs
+4. **Consider user experience** - what's acceptable for your use case
+5. **Design for the common case** - optimize for normal operation
 
 ---
 
 *Previous: [Consistency (Part 1)](./04_consistency.md)*  
-*Next: Learn about [Database Selection](../05_building-blocks/03_databases-part1.md) or explore [Distributed Cache](../05_building-blocks/08_distributed-cache.md).*
+*Next: Learn about [Fault Tolerance](./05_fault-tolerance.md) or explore [Databases](../05_building-blocks/03_databases-part1.md).*

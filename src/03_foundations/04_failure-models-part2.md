@@ -5,7 +5,7 @@ estimated_time: "25 minutes"
 learning_objectives:
   - "Apply failure recovery strategies in system design"
   - "Design systems that gracefully handle different failure types"
-  - "Implement fault tolerance patterns"
+  - "Understand fault tolerance patterns and their trade-offs"
 related_topics:
   prerequisites:
     - ./04_failure-models.md
@@ -17,27 +17,30 @@ related_topics:
   cross_refs: []
 ---
 
-# Failure Models (Part 2): Recovery Strategies and Design Patterns
+# Failure Models (Part 2): Recovery and Design Patterns
 
 ## Failure Recovery Strategies
 
 ### 1. Retry with Exponential Backoff
 
-**Concept**: Retry failed operations with increasing delays.
+**Strategy**: Retry failed operations with increasing delays.
 
 **How it works**:
 - First retry: Wait 1 second
 - Second retry: Wait 2 seconds
 - Third retry: Wait 4 seconds
-- Continue doubling until success or max retries
+- Continue doubling delay
 
 **Use when**: Transient failures (network issues, temporary overload).
 
-**Example**: API call fails → retry with backoff → succeeds on second attempt.
+**Trade-offs**:
+- ✅ Handles temporary issues automatically
+- ❌ Increases latency for persistent failures
+- ❌ Can amplify load on failing system
 
-### 2. Circuit Breaker Pattern
+### 2. Circuit Breaker
 
-**Concept**: Stop calling failing service after threshold.
+**Strategy**: Stop calling failing service after threshold.
 
 **States**:
 - **Closed**: Normal operation, calls pass through
@@ -46,115 +49,129 @@ related_topics:
 
 **Use when**: Service repeatedly failing, want to fail fast.
 
-**Example**: Payment service down → circuit opens → return error immediately instead of waiting for timeout.
+**Trade-offs**:
+- ✅ Prevents cascading failures
+- ✅ Reduces load on failing service
+- ⚠️ Requires careful tuning
 
 ### 3. Graceful Degradation
 
-**Concept**: System continues with reduced functionality.
+**Strategy**: Continue operating with reduced functionality.
 
-**Strategies**:
-- Return cached data
-- Use default values
-- Disable non-critical features
-- Show simplified UI
+**Example**: 
+- Recommendation service down → show default recommendations
+- Search service slow → show cached results
 
-**Example**: Recommendation service down → show popular items instead of personalized recommendations.
+**Use when**: Non-critical features can be disabled.
+
+**Trade-offs**:
+- ✅ System remains usable
+- ❌ Reduced user experience
+- ⚠️ Must define what's "critical"
 
 ### 4. Failover
 
-**Concept**: Automatically switch to backup when primary fails.
+**Strategy**: Switch to backup when primary fails.
 
 **Types**:
 - **Automatic**: System detects and switches
-- **Manual**: Requires intervention
+- **Manual**: Requires human intervention
 
-**Example**: Primary database fails → automatically route to replica.
+**Use when**: Critical components need redundancy.
 
-## Design Patterns for Failure Handling
-
-### Pattern 1: Redundancy
-
-**Concept**: Deploy multiple instances of critical components.
-
-**Benefits**:
-- Single failure doesn't bring down system
-- Load distribution
-- Geographic distribution
-
-**Example**: Multiple application servers behind load balancer.
-
-### Pattern 2: Timeouts
-
-**Concept**: Don't wait indefinitely for responses.
-
-**Implementation**:
-- Set reasonable timeouts
-- Fail fast on timeout
-- Retry if appropriate
-
-**Example**: Database query timeout after 5 seconds → return error instead of hanging.
-
-### Pattern 3: Idempotency
-
-**Concept**: Operations can be safely retried.
-
-**Benefits**:
-- Safe retry on failures
-- Prevents duplicate processing
-- Handles network retries
-
-**Example**: Payment with idempotency key → retry safe if network fails.
-
-### Pattern 4: Health Checks
-
-**Concept**: Continuously monitor component health.
-
-**Implementation**:
-- Periodic health endpoints
-- Heartbeat mechanisms
-- External monitoring
-
-**Example**: Load balancer checks `/health` every 5 seconds → removes unhealthy instances.
+**Trade-offs**:
+- ✅ Maintains availability
+- ❌ Requires duplicate resources
+- ⚠️ Must handle state synchronization
 
 ## Designing for Failure
 
-### Assume Failures Will Happen
+### Principle 1: Assume Failures Will Happen
 
-**Principle**: Design assuming components will fail.
+**Design philosophy**: Failures are normal, not exceptional.
 
-**Practices**:
-- No single points of failure
-- Redundant components
-- Automatic recovery
-- Graceful degradation
+**Implications**:
+- Every component can fail
+- Network can partition
+- Data can be lost
+- Design defensively
 
-### Test Failure Scenarios
+### Principle 2: Fail Fast
 
-**Principle**: Actively test how system handles failures.
+**Strategy**: Detect failures quickly and respond immediately.
 
-**Practices**:
-- Chaos engineering
-- Failure injection
-- Load testing
-- Disaster recovery drills
+**Benefits**:
+- Lower latency for users
+- Prevents resource waste
+- Enables faster recovery
 
-### Monitor Everything
+**Example**: Timeout after 100ms instead of waiting 30 seconds.
 
-**Principle**: Detect failures before they impact users.
+### Principle 3: Isolate Failures
 
-**Practices**:
-- Comprehensive logging
-- Metrics and alerts
-- Distributed tracing
-- Health dashboards
+**Strategy**: Prevent one failure from cascading to others.
+
+**Techniques**:
+- Service boundaries
+- Circuit breakers
+- Rate limiting
+- Resource quotas
+
+### Principle 4: Design for Recovery
+
+**Strategy**: Make recovery automatic and fast.
+
+**Techniques**:
+- Health checks
+- Automatic restarts
+- State replication
+- Backup systems
+
+## Common Failure Scenarios
+
+### Scenario 1: Database Failure
+
+**Failure**: Primary database crashes.
+
+**Recovery**:
+1. Detect failure (health check timeout)
+2. Route reads to replica
+3. Promote replica to primary
+4. Restore failed database as new replica
+
+**Design considerations**: Replication lag, data consistency.
+
+### Scenario 2: Network Partition
+
+**Failure**: Network splits system into isolated parts.
+
+**Recovery**:
+1. Detect partition (heartbeat failure)
+2. Choose partition to serve (CAP theorem decision)
+3. Continue operating in chosen partition
+4. Reconcile when partition heals
+
+**Design considerations**: Consistency vs availability trade-off.
+
+### Scenario 3: Service Overload
+
+**Failure**: Service receives more requests than it can handle.
+
+**Recovery**:
+1. Rate limit incoming requests
+2. Queue excess requests
+3. Scale up service capacity
+4. Shed non-critical load
+
+**Design considerations**: Load balancing, auto-scaling, queuing.
 
 ## Key Takeaways
 
-1. **Failures are expected** - design for them, don't just hope they don't happen
-2. **Recovery strategies** - retry, circuit break, degrade gracefully
-3. **Redundancy is essential** - eliminate single points of failure
-4. **Test failure scenarios** - know how system behaves under failure
-5. **Monitor proactively** - detect issues before users do
+1. **Failures are expected** - design systems to handle them
+2. **Detect failures quickly** - use timeouts, health checks, heartbeats
+3. **Recover automatically** - failover, retry, circuit breakers
+4. **Isolate failures** - prevent cascading effects
+5. **Test failure scenarios** - chaos engineering, failure injection
 
 ---
 
