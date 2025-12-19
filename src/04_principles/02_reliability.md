@@ -13,6 +13,7 @@ related_topics:
     - ./01_availability.md
     - ../03_foundations/04_failure-models.md
   enables:
+    - ./02_reliability-part2.md
     - ./05_fault-tolerance.md
     - ../05_building-blocks/03_databases-part1.md
   cross_refs: []
@@ -159,32 +160,6 @@ Higher MTBF and lower MTTR = higher reliability.
 
 **Solution**: Isolation, circuit breakers, rate limiting.
 
-## Testing for Reliability
-
-### Unit Testing
-- Test individual components
-- Verify correct behavior
-- Catch bugs early
-
-### Integration Testing
-- Test component interactions
-- Verify end-to-end flows
-- Catch integration issues
-
-### Chaos Engineering
-- Intentionally inject failures
-- Verify system resilience
-- Test recovery mechanisms
-
-## Key Takeaways
-
-1. **Reliability = correctness** - system must work correctly when running
-2. **Different from availability** - can be available but unreliable
-3. **Design for errors** - validate, handle, recover gracefully
-4. **Measure and monitor** - track error rates and MTBF/MTTR
-5. **Test resilience** - verify system handles failures correctly
-
 ---
 
-*Previous: [Availability](./01_availability.md)*  
-*Next: Learn about [Scalability](./03_scalability.md) or explore [Fault Tolerance](./05_fault-tolerance.md).*
+*Next: Continue with [Testing for Reliability and Key Takeaways](./02_reliability-part2.md).*

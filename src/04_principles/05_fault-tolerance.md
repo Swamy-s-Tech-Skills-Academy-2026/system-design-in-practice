@@ -176,23 +176,6 @@ Fault tolerance is the ability of a system to **continue operating correctly** e
 - Stateless design
 - Automatic restarts
 
-### Network Fault Tolerance
-
-**Strategies**:
-- Multiple network paths
-- Retry with exponential backoff
-- Circuit breakers
-- Timeout handling
-
-## Key Takeaways
-
-1. **Faults are inevitable** - design expecting them
-2. **Redundancy is essential** - multiple instances prevent single points of failure
-3. **Failover maintains service** - automatic switching reduces downtime
-4. **Graceful degradation** - better than complete failure
-5. **Isolate failures** - prevent cascade effects
-
 ---
 
-*Previous: [Consistency](./04_consistency.md)*  
-*Next: Learn about [Maintainability](./06_maintainability.md) or explore [Load Balancers](../05_building-blocks/02_load-balancers.md).*
+*Next: Continue with [Fault Tolerance in Practice](./05_fault-tolerance-part2.md).*

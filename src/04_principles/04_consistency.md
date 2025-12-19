@@ -12,6 +12,7 @@ related_topics:
   builds_upon:
     - ../03_foundations/03_consistency-models.md
   enables:
+    - ./04_consistency-part2.md
     - ../05_building-blocks/03_databases-part1.md
     - ../05_building-blocks/08_distributed-cache.md
   cross_refs: []
@@ -129,41 +130,6 @@ Consistency is not just a technical requirement—it's a **design decision** tha
 - Lower latency
 - Higher throughput
 
-## Design Patterns for Consistency
-
-### Pattern 1: Write-Through Cache
-
-**Concept**: Write to both cache and database simultaneously.
-
-**Consistency**: Strong (cache always matches database).
-
-**Use when**: Need strong consistency, can accept write latency.
-
-### Pattern 2: Write-Behind Cache
-
-**Concept**: Write to cache immediately, async write to database.
-
-**Consistency**: Eventual (cache may be ahead of database).
-
-**Use when**: Can accept eventual consistency, need low write latency.
-
-### Pattern 3: Read Replicas
-
-**Concept**: Writes go to primary, reads from replicas.
-
-**Consistency**: Eventual (replicas lag behind primary).
-
-**Use when**: Read-heavy workloads, can accept stale reads.
-
-## Key Takeaways
-
-1. **Consistency is a spectrum** - choose based on requirements
-2. **Trade-offs are inevitable** - consistency vs availability vs performance
-3. **Different use cases need different guarantees** - financial vs social media
-4. **Design patterns help** - write-through, write-behind, read replicas
-5. **Monitor consistency** - track replication lag, stale reads
-
 ---
 
-*Previous: [Scalability](./03_scalability.md)*  
-*Next: Learn about [Fault Tolerance](./05_fault-tolerance.md) or explore [Database Selection](../05_building-blocks/03_databases-part1.md).*
+*Next: Continue with [Design Patterns for Consistency](./04_consistency-part2.md).*
