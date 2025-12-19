@@ -41,12 +41,14 @@ This document provides a comprehensive index of all topics covered in this repos
 - [Failure Models](03_foundations/04_failure-models.md)
 - [Back-of-the-Envelope Calculations](03_foundations/05_back-of-envelope.md)
 - [C4 Model for System Design](03_foundations/06_c4-diagrams.md)
+- [Request Flow and Basic Architecture (Part 1)](03_foundations/07_request-flow-and-basic-architecture-part1.md)
+- [Request Flow and Basic Architecture (Part 2)](03_foundations/07_request-flow-and-basic-architecture-part2.md)
 
 ## System Design Principles
 
 - [Availability](04_principles/01_availability.md)
 - [Reliability](04_principles/02_reliability.md)
-- [Scalability](04_principles/03_scalability.md)
+- [Scalability](04_principles/03_scalability.md) - Vertical vs Horizontal Scaling
 - [Maintainability](04_principles/06_maintainability.md)
 - [Fault Tolerance](04_principles/05_fault-tolerance.md)
 - [Consistency](04_principles/04_consistency.md)
@@ -138,7 +140,7 @@ This document provides a comprehensive index of all topics covered in this repos
 - [AWS Kinesis Outage](08_failures/03_aws-kinesis-outage.md)
 - [AWS Outages](08_failures/04_aws-outage.md)
 - [Lessons Learned](08_failures/05_lessons-learned.md)
- 
+
 ## AI & ML Systems
 
 - [AI & ML Systems in Practice](09_ai-ml-systems/README.md)
@@ -180,4 +182,4 @@ This document provides a comprehensive index of all topics covered in this repos
 
 ---
 
-Last Updated: December 16, 2025
+Last Updated: December 18, 2025
