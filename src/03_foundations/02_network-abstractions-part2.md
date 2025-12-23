@@ -8,9 +8,9 @@ learning_objectives:
   - "Choose appropriate RPC patterns for different scenarios"
 related_topics:
   prerequisites:
-    - ./02_network-abstractions.md
+    - ./02_network-abstractions-part1.md
   builds_upon:
-    - ./02_network-abstractions.md
+    - ./02_network-abstractions-part1.md
   enables:
     - ./07_request-flow-and-basic-architecture-part1.md
     - ../05_building-blocks/09_message-queues.md

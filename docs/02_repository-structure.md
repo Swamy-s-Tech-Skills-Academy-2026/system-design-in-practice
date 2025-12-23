@@ -56,10 +56,10 @@ system-design-in-practice/
 │   │
 │   ├── 03_foundations/                    # Foundational concepts
 │   │   ├── 01_abstractions.md
-│   │   ├── 02_network-abstractions.md
-│   │   ├── 03_consistency-models.md
-│   │   ├── 04_failure-models.md
-│   │   ├── 05_back-of-envelope.md
+│   │   ├── 02_network-abstractions-part1.md
+│   │   ├── 03_consistency-models-part1.md
+│   │   ├── 04_failure-models-part1.md
+│   │   ├── 05_back-of-envelope-part1.md
 │   │   ├── 06_c4-diagrams-part1.md
 │   │   ├── 07_scaling-fundamentals.md
 │   │   ├── 07_scaling-fundamentals-part1.md
