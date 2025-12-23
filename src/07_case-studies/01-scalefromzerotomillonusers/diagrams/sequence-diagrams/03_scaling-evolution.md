@@ -161,3 +161,25 @@ Phase 4 (1M+ Users): Microservices
 - **Canary Deployments**: Roll out changes incrementally
 - **Monitoring**: Monitor metrics during transitions
 - **Rollback Plan**: Always have a rollback strategy
+
+> **Interview Note**:  
+> Skipping phases is a common mistake. Each phase exists to solve a specific bottleneck, not to follow trends. Jumping straight to microservices (Phase 4) without solving Phase 2-3 bottlenecks shows lack of practical engineering judgment.
+
+## Interviewer Lens
+
+This evolution demonstrates:
+
+- **Gradual scaling approach**: Solve one bottleneck at a time
+- **Metrics-driven decisions**: Each phase triggered by specific metrics (QPS, latency, cost)
+- **Cost optimization**: Start simple, scale as needed
+- **Realistic migration**: Acknowledges that systems evolve, don't start at scale
+- **Production thinking**: Considers operational complexity at each phase
+
+**What interviewers look for**:
+- ✅ Understanding that Phase 1 is valid for small scale
+- ✅ Clear triggers for each phase transition
+- ✅ Cost awareness (not over-engineering)
+- ✅ Migration strategy (not just final architecture)
+- ❌ Jumping to microservices too early
+- ❌ Ignoring cost implications
+- ❌ No migration plan
