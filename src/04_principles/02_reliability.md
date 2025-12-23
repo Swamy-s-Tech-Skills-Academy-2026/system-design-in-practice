@@ -134,32 +134,6 @@ Higher MTBF and lower MTTR = higher reliability.
 - **Fallback**: Alternative behavior
 - **Logging**: Track for analysis
 
-## Common Reliability Issues
-
-### 1. Race Conditions
-
-**Problem**: Concurrent operations interfere with each other.
-
-**Solution**: Locks, transactions, atomic operations.
-
-### 2. Data Corruption
-
-**Problem**: Invalid data stored or processed.
-
-**Solution**: Validation, checksums, data integrity checks.
-
-### 3. Resource Leaks
-
-**Problem**: Resources not released, causing gradual degradation.
-
-**Solution**: Proper cleanup, resource pooling, monitoring.
-
-### 4. Cascading Failures
-
-**Problem**: One failure causes others.
-
-**Solution**: Isolation, circuit breakers, rate limiting.
-
 ---
 
 *Next: Continue with [Testing for Reliability and Monitoring](./02_reliability-part2.md).*

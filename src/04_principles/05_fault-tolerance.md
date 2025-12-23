@@ -147,35 +147,6 @@ Fault tolerance is the ability of a system to **continue operating correctly** e
 
 **Example**: Database repeatedly timing out → open circuit → stop sending queries → test after 30s → close if healthy.
 
-### Pattern 4: Bulkhead
-
-**Concept**: Isolate failures to prevent cascade.
-
-**Implementation**:
-- Separate resources for different operations
-- Independent failure domains
-- Resource quotas per service
-
-**Example**: Critical payment service isolated from non-critical analytics service.
-
-## Fault Tolerance in Practice
-
-### Database Fault Tolerance
-
-**Strategies**:
-- Primary-replica setup
-- Automatic failover
-- Read replicas for read operations
-- Connection pooling with retry
-
-### Service Fault Tolerance
-
-**Strategies**:
-- Multiple service instances
-- Load balancer health checks
-- Stateless design
-- Automatic restarts
-
 ---
 
 *Next: Continue with [Fault Tolerance in Practice](./05_fault-tolerance-part2.md).*

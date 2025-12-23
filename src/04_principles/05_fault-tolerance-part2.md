@@ -81,6 +81,35 @@ related_topics:
 - Trigger alerts
 - Initiate replacement
 
+## Fault Tolerance in Practice
+
+### Database Fault Tolerance
+
+**Strategies**:
+- Primary-replica setup
+- Automatic failover
+- Read replicas for read operations
+- Connection pooling with retry
+
+### Service Fault Tolerance
+
+**Strategies**:
+- Multiple service instances
+- Load balancer health checks
+- Stateless design
+- Automatic restarts
+
+### Pattern 4: Bulkhead
+
+**Concept**: Isolate failures to prevent cascade.
+
+**Implementation**:
+- Separate resources for different operations
+- Independent failure domains
+- Resource quotas per service
+
+**Example**: Critical payment service isolated from non-critical analytics service.
+
 ## Network Fault Tolerance
 
 ### Retry Logic

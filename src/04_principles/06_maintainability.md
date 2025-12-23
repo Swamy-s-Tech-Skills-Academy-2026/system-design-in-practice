@@ -134,24 +134,6 @@ Maintainable systems enable:
 - Capacity planning
 - Understanding user behavior
 
-## Maintainability vs Other Principles
-
-### Maintainability vs Performance
-
-**Trade-off**: Highly optimized code may be harder to maintain.
-
-**Balance**: Optimize where it matters, keep code readable elsewhere.
-
-**Example**: Database query optimization is worth complexity, but don't over-optimize simple loops.
-
-### Maintainability vs Speed to Market
-
-**Trade-off**: Quick hacks vs proper design.
-
-**Balance**: Technical debt is acceptable if managed and paid back.
-
-**Example**: Prototype with shortcuts, but refactor before production scale.
-
 ---
 
 *Next: Continue with [Technical Debt Management and Key Takeaways](./06_maintainability-part2.md).*
