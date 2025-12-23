@@ -8,10 +8,10 @@ learning_objectives:
   - "Implement graceful degradation and recovery mechanisms"
 related_topics:
   prerequisites:
-    - ../03_foundations/04_failure-models.md
+    - ../03_foundations/04_failure-models-part1.md
     - ./01_availability.md
   builds_upon:
-    - ../03_foundations/04_failure-models.md
+    - ../03_foundations/04_failure-models-part1.md
     - ./01_availability.md
   enables:
     - ../05_building-blocks/02_load-balancers.md

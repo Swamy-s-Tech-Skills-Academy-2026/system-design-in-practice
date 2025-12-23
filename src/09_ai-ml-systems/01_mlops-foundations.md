@@ -9,7 +9,7 @@ learning_objectives:
 related_topics:
   prerequisites:
     - ../03_foundations/01_abstractions.md
-    - ../03_foundations/05_back-of-envelope.md
+    - ../03_foundations/05_back-of-envelope-part1.md
   builds_upon:
     - ../05_building-blocks/03_databases-part1.md
     - ../05_building-blocks/09_message-queues.md

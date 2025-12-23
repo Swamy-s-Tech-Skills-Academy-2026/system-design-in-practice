@@ -8,9 +8,9 @@ learning_objectives:
   - "Apply redundancy and failover strategies"
 related_topics:
   prerequisites:
-    - ../03_foundations/04_failure-models.md
+    - ../03_foundations/04_failure-models-part1.md
   builds_upon:
-    - ../03_foundations/04_failure-models.md
+    - ../03_foundations/04_failure-models-part1.md
   enables:
     - ./05_fault-tolerance.md
     - ../05_building-blocks/02_load-balancers.md

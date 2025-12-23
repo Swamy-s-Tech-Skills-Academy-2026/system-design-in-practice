@@ -8,9 +8,9 @@ learning_objectives:
   - "Implement fault tolerance patterns"
 related_topics:
   prerequisites:
-    - ./04_failure-models.md
+    - ./04_failure-models-part1.md
   builds_upon:
-    - ./04_failure-models.md
+    - ./04_failure-models-part1.md
   enables:
     - ../04_principles/05_fault-tolerance.md
     - ../08_failures/01_introduction.md
@@ -142,5 +142,5 @@ for attempt in range(max_retries):
 
 ---
 
-*Previous: [Failure Models (Part 1)](./04_failure-models.md)*  
+*Previous: [Failure Models (Part 1)](./04_failure-models-part1.md)*  
 *Next: Learn about [Fault Tolerance](../04_principles/05_fault-tolerance.md) or explore [Real-World Failures](../08_failures/01_introduction.md).*

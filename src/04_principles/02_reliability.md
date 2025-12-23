@@ -11,7 +11,7 @@ related_topics:
     - ./01_availability.md
   builds_upon:
     - ./01_availability.md
-    - ../03_foundations/04_failure-models.md
+    - ../03_foundations/04_failure-models-part1.md
   enables:
     - ./02_reliability-part2.md
     - ./05_fault-tolerance.md

@@ -8,9 +8,9 @@ learning_objectives:
   - "Plan for data growth and capacity scaling"
 related_topics:
   prerequisites:
-    - ./05_back-of-envelope.md
+    - ./05_back-of-envelope-part1.md
   builds_upon:
-    - ./05_back-of-envelope.md
+    - ./05_back-of-envelope-part1.md
   enables:
     - ../07_case-studies/01-scalefromzerotomillonusers/02_back-of-envelope.md
     - ../07_case-studies/05-url-shortener/02_back-of-envelope.md
@@ -53,6 +53,6 @@ Design for 3-5 years, not just current scale.
 
 ---
 
-*Previous: [Back-of-the-Envelope Calculations (Part 1)](./05_back-of-envelope.md)*  
+*Previous: [Back-of-the-Envelope Calculations (Part 1)](./05_back-of-envelope-part1.md)*  
 *Next: Apply these calculations in [Scale from Zero to Million Users case study](../07_case-studies/01-scalefromzerotomillonusers/02_back-of-envelope.md) or explore [C4 Diagrams](./06_c4-diagrams-part1.md).*
 

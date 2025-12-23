@@ -10,7 +10,7 @@ related_topics:
   prerequisites:
     - ./01_abstractions.md
   builds_upon:
-    - ./02_network-abstractions.md
+    - ./02_network-abstractions-part1.md
   enables:
     - ./03_consistency-models-part2.md
     - ../04_principles/04_consistency.md
@@ -18,7 +18,7 @@ related_topics:
   cross_refs: []
 ---
 
-# Spectrum of Consistency Models
+# Spectrum of Consistency Models (Part 1)
 
 ## What Is Consistency?
 

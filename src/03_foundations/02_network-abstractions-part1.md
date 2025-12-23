@@ -18,7 +18,7 @@ related_topics:
   cross_refs: []
 ---
 
-# Network Abstractions: Remote Procedure Calls (RPC)
+# Network Abstractions: Remote Procedure Calls (RPC) (Part 1)
 
 ## What Are RPCs?
 

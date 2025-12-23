@@ -10,7 +10,7 @@ related_topics:
   prerequisites: []
   builds_upon: []
   enables:
-    - ./02_network-abstractions.md
+    - ./02_network-abstractions-part1.md
     - ./07_scaling-fundamentals-part1.md
     - ../04_principles/03_scalability.md
   cross_refs: []
@@ -126,4 +126,4 @@ Understanding that:
 
 ---
 
-*Next: Learn about [Network Abstractions: RPC](./02_network-abstractions.md) or explore [Scaling Fundamentals](./07_scaling-fundamentals-part1.md).*
+*Next: Learn about [Network Abstractions: RPC](./02_network-abstractions-part1.md) or explore [Scaling Fundamentals](./07_scaling-fundamentals-part1.md).*

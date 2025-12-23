@@ -8,9 +8,9 @@ learning_objectives:
   - "Choose appropriate consistency models for different use cases"
 related_topics:
   prerequisites:
-    - ./03_consistency-models.md
+    - ./03_consistency-models-part1.md
   builds_upon:
-    - ./03_consistency-models.md
+    - ./03_consistency-models-part1.md
   enables:
     - ../04_principles/04_consistency.md
     - ../05_building-blocks/03_databases-part1.md
@@ -101,6 +101,6 @@ related_topics:
 
 ---
 
-*Previous: [Consistency Models (Part 1)](./03_consistency-models.md)*  
-*Next: Learn about [Failure Models](./04_failure-models.md) or explore [Consistency Principles](../04_principles/04_consistency.md).*
+*Previous: [Consistency Models (Part 1)](./03_consistency-models-part1.md)*  
+*Next: Learn about [Failure Models](./04_failure-models-part1.md) or explore [Consistency Principles](../04_principles/04_consistency.md).*
 
