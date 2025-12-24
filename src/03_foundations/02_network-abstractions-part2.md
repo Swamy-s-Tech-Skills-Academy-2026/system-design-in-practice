@@ -8,9 +8,9 @@ learning_objectives:
   - "Choose appropriate RPC patterns for different scenarios"
 related_topics:
   prerequisites:
-    - ./02_network-abstractions.md
+    - ./02_network-abstractions-part1.md
   builds_upon:
-    - ./02_network-abstractions.md
+    - ./02_network-abstractions-part1.md
   enables:
     - ./07_request-flow-and-basic-architecture-part1.md
     - ../05_building-blocks/09_message-queues.md
@@ -106,6 +106,6 @@ for result in search_service.stream_results(query="system design"):
 
 ---
 
-*Previous: [Network Abstractions: RPC (Part 1)](./02_network-abstractions.md)*  
-*Next: Learn about [Consistency Models](./03_consistency-models.md) or explore [Request Flow](./07_request-flow-and-basic-architecture-part1.md).*
+*Previous: [Network Abstractions: RPC (Part 1)](./02_network-abstractions-part1.md)*  
+*Next: Learn about [Consistency Models](./03_consistency-models-part1.md) or explore [Request Flow](./07_request-flow-and-basic-architecture-part1.md).*
 

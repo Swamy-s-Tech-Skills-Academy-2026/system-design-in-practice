@@ -9,9 +9,9 @@ learning_objectives:
 related_topics:
   prerequisites:
     - ./01_abstractions.md
-    - ./02_network-abstractions.md
+    - ./02_network-abstractions-part1.md
   builds_upon:
-    - ./03_consistency-models.md
+    - ./03_consistency-models-part1.md
   enables:
     - ./04_failure-models-part2.md
     - ../04_principles/05_fault-tolerance.md
@@ -19,7 +19,7 @@ related_topics:
   cross_refs: []
 ---
 
-# The Spectrum of Failure Models
+# The Spectrum of Failure Models (Part 1)
 
 ## Why Failure Models Matter
 

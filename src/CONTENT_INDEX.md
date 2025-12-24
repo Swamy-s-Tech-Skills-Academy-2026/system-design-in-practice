@@ -37,11 +37,11 @@ This document provides a comprehensive index of all topics covered in this repos
 ## Foundational Concepts
 
 - [Abstractions in System Design](03_foundations/01_abstractions.md)
-- [Network Abstractions: RPC](03_foundations/02_network-abstractions.md)
-- [Consistency Models](03_foundations/03_consistency-models.md)
-- [Failure Models](03_foundations/04_failure-models.md)
-- [Back-of-the-Envelope Calculations](03_foundations/05_back-of-envelope.md)
-- [C4 Model for System Design](03_foundations/06_c4-diagrams.md)
+- [Network Abstractions: RPC (Part 1)](03_foundations/02_network-abstractions-part1.md)
+- [Consistency Models (Part 1)](03_foundations/03_consistency-models-part1.md)
+- [Failure Models (Part 1)](03_foundations/04_failure-models-part1.md)
+- [Back-of-the-Envelope Calculations (Part 1)](03_foundations/05_back-of-envelope-part1.md)
+- [C4 Model for System Design (Part 1)](03_foundations/06_c4-diagrams-part1.md)
 - [Request Flow and Basic Architecture (Part 1)](03_foundations/07_request-flow-and-basic-architecture-part1.md)
 - [Request Flow and Basic Architecture (Part 2)](03_foundations/07_request-flow-and-basic-architecture-part2.md)
 

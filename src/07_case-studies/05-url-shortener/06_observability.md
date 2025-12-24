@@ -371,7 +371,7 @@ redirect requests | last 24 hours | group by hour
 ## Cross-References
 
 - Related: [Observability Building Block](../../05_building-blocks/07_monitoring.md)
-- Related: [Failure Models](../../03_foundations/04_failure-models.md)
+- Related: [Failure Models](../../03_foundations/04_failure-models-part1.md)
 - Related: [Failure Analysis](../../08_failures/01_introduction.md)
 
 ---

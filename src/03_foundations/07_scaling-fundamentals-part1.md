@@ -10,7 +10,7 @@ related_topics:
   prerequisites: []
   builds_upon:
     - 01_abstractions.md
-    - 02_network-abstractions.md
+    - 02_network-abstractions-part1.md
   enables:
     - ./07_scaling-fundamentals-part2.md
     - ../04_principles/03_scalability.md

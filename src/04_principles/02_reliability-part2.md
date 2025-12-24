@@ -93,6 +93,32 @@ related_topics:
 - **Context**: Include request ID, user ID, timestamps
 - **Sensitive data**: Never log passwords, tokens, PII
 
+## Common Reliability Issues
+
+### 1. Race Conditions
+
+**Problem**: Concurrent operations interfere with each other.
+
+**Solution**: Locks, transactions, atomic operations.
+
+### 2. Data Corruption
+
+**Problem**: Invalid data stored or processed.
+
+**Solution**: Validation, checksums, data integrity checks.
+
+### 3. Resource Leaks
+
+**Problem**: Resources not released, causing gradual degradation.
+
+**Solution**: Proper cleanup, resource pooling, monitoring.
+
+### 4. Cascading Failures
+
+**Problem**: One failure causes others.
+
+**Solution**: Isolation, circuit breakers, rate limiting.
+
 ## Error Recovery Mechanisms
 
 ### Automatic Recovery

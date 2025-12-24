@@ -8,9 +8,9 @@ learning_objectives:
   - "Choose appropriate consistency guarantees for different use cases"
 related_topics:
   prerequisites:
-    - ../03_foundations/03_consistency-models.md
+    - ../03_foundations/03_consistency-models-part1.md
   builds_upon:
-    - ../03_foundations/03_consistency-models.md
+    - ../03_foundations/03_consistency-models-part1.md
   enables:
     - ./04_consistency-part2.md
     - ../05_building-blocks/03_databases-part1.md

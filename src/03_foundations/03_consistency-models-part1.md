@@ -10,7 +10,7 @@ related_topics:
   prerequisites:
     - ./01_abstractions.md
   builds_upon:
-    - ./02_network-abstractions.md
+    - ./02_network-abstractions-part1.md
   enables:
     - ./03_consistency-models-part2.md
     - ../04_principles/04_consistency.md
@@ -18,7 +18,7 @@ related_topics:
   cross_refs: []
 ---
 
-# Spectrum of Consistency Models
+# Spectrum of Consistency Models (Part 1)
 
 ## What Is Consistency?
 
@@ -135,46 +135,6 @@ Strong Consistency → Sequential → Causal → Eventual → Weak
 **PA/EC** (Partition: Availability, Else: Consistency):
 - Balance: available during partitions, consistent during normal operation
 - Example: Most production systems
-
-## Choosing the Right Consistency Model
-
-### Decision Framework
-
-1. **What happens if data is stale?**
-   - Critical (money, medical) → Strong consistency
-   - Acceptable (social posts) → Eventual consistency
-
-2. **How often is data updated?**
-   - Frequent updates → Consider eventual consistency
-   - Rare updates → Strong consistency feasible
-
-3. **Geographic distribution?**
-   - Global → Eventual consistency often necessary
-   - Single region → Strong consistency possible
-
-4. **Read vs Write ratio?**
-   - Read-heavy → Eventual consistency with caching
-   - Write-heavy → Consider strong consistency
-
-## Common Patterns
-
-### Pattern 1: Read Your Writes
-
-**Requirement**: After writing, subsequent reads must see your write.
-
-**Solution**: Route reads to the same replica that handled the write, or use strong consistency for user's own data.
-
-### Pattern 2: Monotonic Reads
-
-**Requirement**: Once you read a value, you never see an older value.
-
-**Solution**: Route all reads for a user to the same replica, or use version numbers.
-
-### Pattern 3: Session Consistency
-
-**Requirement**: Consistency guarantees within a user session.
-
-**Solution**: Sticky sessions, or route user's requests to same replica.
 
 ---
 
