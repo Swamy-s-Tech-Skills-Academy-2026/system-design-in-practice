@@ -12,6 +12,18 @@
 >
 > This repository will evolve as my understanding deepens.
 
+## 🚧 Status
+
+This repository is **actively evolving** as I progress through my system design learning journey.
+
+---
+
+## 📌 Disclaimer
+
+This is a **personal learning repository**, not official course material or a structured curriculum.
+
+---
+
 ## What This Repository Covers
 
 - Core system design principles
@@ -84,9 +96,35 @@ Making this repository public helps me:
 
 Others are welcome to read along, but this repository primarily reflects *my* journey.
 
-## Contributing
+## 🤝 Contributing
 
-We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+We welcome contributions! Whether it's:
+
+- 🐛 Bug fixes
+- 📝 Documentation improvements
+- 💡 New learning content
+- 🎯 Additional case studies or examples
+- 📚 Additional learning resources
+- 🔧 Tooling and automation improvements
+
+Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+---
+
+## 📞 About & Get In Touch
+
+### Swamy's Tech Skills Academy 2026
+
+Ready to master System Design? Let's begin your transformation! 🚀
+
+Ready to take your system design skills to the next level? Join our learning community!
+
+- 🌐 Visit our website for more courses
+- 📧 Contact us for custom training programs
+- 🏆 Get certified in System Design
+- 👥 Join our learning community
+
+Happy Learning! 🎓✨
 
 ## Attribution & Learning Sources
 
@@ -98,6 +136,40 @@ This repository represents a learning journey in system design. The content has 
 - **Real-World Case Studies**: Analysis of publicly available system architectures and design patterns
 
 **Note**: All content in this repository is original and transformative. While inspired by various learning sources, the explanations, examples, diagrams, and case studies are created from first principles to provide a unique learning experience.
+
+---
+
+## 🛠️ Development & Quality Assurance
+
+### Documentation Quality Checks (Local)
+
+Run Markdown lint against README and all documentation before opening a PR:
+
+```bash
+# From repo root - lint all markdown files
+npx --yes markdownlint-cli2 "README.md" "docs/**/*.md" "src/**/*.md" ".github/**/*.md"
+```
+
+This uses the repository's `.markdownlint.json` configuration automatically.
+
+### Link Validation (Lychee)
+
+Run link checker to validate all links in documentation:
+
+```bash
+# Validate all links (recommended; matches CI behavior)
+docker run --rm -w /input -v "${PWD}:/input" lycheeverse/lychee:latest --config lychee.toml --no-progress README.md docs/**/*.md src/**/*.md .github/**/*.md
+```
+
+### Pre-Commit Checklist
+
+Before committing changes:
+
+- [ ] Run markdownlint and fix any issues
+- [ ] Run Lychee link checker (if Docker available)
+- [ ] Verify all file references point to existing files
+- [ ] Check that code fences have language specifications
+- [ ] Ensure proper blank lines around headings and lists
 
 ---
 
