@@ -30,4 +30,4 @@ related_topics:
 ---
 
 *Previous: [Scalability in System Design (Part 1)](./03_scalability.md)*  
-*Next: Explore [Load Balancers](../../05_building-blocks/02_load-balancers.md) for horizontal scaling implementation, or study [Scale from Zero to Million Users](../../07_case-studies/01-scalefromzerotomillonusers/README.md) case study.*
+*Next: Explore [Load Balancers](../05_building-blocks/02_load-balancers.md) for horizontal scaling implementation, or study [Scale from Zero to Million Users](../07_case-studies/01-scalefromzerotomillonusers/README.md) case study.*

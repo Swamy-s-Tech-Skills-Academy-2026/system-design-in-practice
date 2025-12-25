@@ -38,9 +38,9 @@ Brief summary of what was changed and why.
 
 ### Pre-Submission
 
-- [ ] I have read the [Contributing Guidelines](CONTRIBUTING.md)
-- [ ] I have read the [Code of Conduct](CODE_OF_CONDUCT.md)
-- [ ] My changes follow the repository's [content rules](.cursor/rules/01_educational-content-rules.mdc)
+ [ ] I have read the [Contributing Guidelines](../CONTRIBUTING.md)
+ [ ] I have read the [Code of Conduct](../CODE_OF_CONDUCT.md)
+ [ ] My changes follow the repository's [content rules](../.cursor/rules/01_educational-content-rules.mdc)
 - [ ] I have checked for broken file references
 - [ ] I have verified YAML frontmatter (if applicable)
 - [ ] I have checked line count compliance (≤150 lines for educational content)
