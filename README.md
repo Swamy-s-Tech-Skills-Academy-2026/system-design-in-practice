@@ -96,35 +96,7 @@ Making this repository public helps me:
 
 Others are welcome to read along, but this repository primarily reflects *my* journey.
 
-## 🤝 Contributing
-
-We welcome contributions! Whether it's:
-
-- 🐛 Bug fixes
-- 📝 Documentation improvements
-- 💡 New learning content
-- 🎯 Additional case studies or examples
-- 📚 Additional learning resources
-- 🔧 Tooling and automation improvements
-
-Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
-
 ---
-
-## 📞 About & Get In Touch
-
-### Swamy's Tech Skills Academy 2026
-
-Ready to master System Design? Let's begin your transformation! 🚀
-
-Ready to take your system design skills to the next level? Join our learning community!
-
-- 🌐 Visit our website for more courses
-- 📧 Contact us for custom training programs
-- 🏆 Get certified in System Design
-- 👥 Join our learning community
-
-Happy Learning! 🎓✨
 
 ## Attribution & Learning Sources
 
@@ -180,6 +152,38 @@ Before committing changes:
 2. Review the content of the entire workspace.
 3. Do deep dive. Go through each and every file and perform systematic review.
 ```
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! Whether it's:
+
+- 🐛 Bug fixes
+- 📝 Documentation improvements
+- 💡 New learning content
+- 🎯 Additional case studies or examples
+- 📚 Additional learning resources
+- 🔧 Tooling and automation improvements
+
+Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+---
+
+## 📞 About & Get In Touch
+
+### Swamy's Tech Skills Academy 2026
+
+Ready to master System Design? Let's begin your transformation! 🚀
+
+Ready to take your system design skills to the next level? Join our learning community!
+
+- 🌐 Visit our website for more courses
+- 📧 Contact us for custom training programs
+- 🏆 Get certified in System Design
+- 👥 Join our learning community
+
+Happy Learning! 🎓✨
 
 ---
 
