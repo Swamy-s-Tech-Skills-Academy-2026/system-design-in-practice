@@ -12,10 +12,12 @@ A clear description of the content improvement you're suggesting.
 
 ## Content Location
 
-**File(s)**: 
+**File(s)**:
+
 - `path/to/file.md`
 
 **Section(s)**:
+
 - Section name or topic
 
 ## Current Content
@@ -29,6 +31,7 @@ What would you like to see changed or added?
 ## Rationale
 
 Why is this improvement valuable?
+
 - Does it clarify a concept?
 - Does it fix an error?
 - Does it add missing information?

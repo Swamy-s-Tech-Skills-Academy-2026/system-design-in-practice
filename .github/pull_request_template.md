@@ -28,19 +28,21 @@ A clear and concise description of what this PR does.
 ## Changes Made
 
 ### Files Changed
+
 - `path/to/file1.md`
 - `path/to/file2.md`
 
 ### Summary
+
 Brief summary of what was changed and why.
 
 ## Checklist
 
 ### Pre-Submission
 
- [ ] I have read the [Contributing Guidelines](../CONTRIBUTING.md)
- [ ] I have read the [Code of Conduct](../CODE_OF_CONDUCT.md)
- [ ] My changes follow the repository's [content rules](../.cursor/rules/01_educational-content-rules.mdc)
+- [ ] I have read the [Contributing Guidelines](../CONTRIBUTING.md)
+- [ ] I have read the [Code of Conduct](../CODE_OF_CONDUCT.md)
+- [ ] My changes follow the repository's [content rules](../.cursor/rules/01_educational-content-rules.mdc)
 - [ ] I have checked for broken file references
 - [ ] I have verified YAML frontmatter (if applicable)
 - [ ] I have checked line count compliance (≤150 lines for educational content)

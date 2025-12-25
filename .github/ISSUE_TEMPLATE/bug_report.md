@@ -12,10 +12,12 @@ A clear and concise description of what the bug is.
 
 ## Location
 
-**File(s) affected**: 
+**File(s) affected**:
+
 - `path/to/file.md`
 
 **Section(s) affected**:
+
 - Section name or line numbers
 
 ## Steps to Reproduce
