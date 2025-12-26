@@ -1,10 +1,28 @@
 # System Design in Practice
 
-This repository documents **my personal learning journey in system design** — the concepts I’m studying, the mental models I’m building, and how my thinking evolves over time.
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Status](https://img.shields.io/badge/status-learning--journey-green.svg)
+![System Design](https://img.shields.io/badge/System-Design-orange.svg)
 
-It is **not a course**, not a certification guide, and not a step-by-step tutorial. The structure exists to support *my thinking*, not to prescribe how others must learn.
+> **⚠️ IMPORTANT: This is NOT an official course or syllabus. This is Swamy's personal learning journey and study materials.**
+>
+> This repository documents **my personal learning journey in system design** — the concepts I'm studying, the mental models I'm building, and how my thinking evolves over time.
+>
+> It is **not a course**, not a certification guide, and not a step-by-step tutorial. The structure exists to support *my thinking*, not to prescribe how others must learn.
+>
+> This repository will evolve as my understanding deepens.
 
-This repository will evolve as my understanding deepens.
+## 🚧 Status
+
+This repository is **actively evolving** as I progress through my system design learning journey.
+
+---
+
+## 📌 Disclaimer
+
+This is a **personal learning repository**, not official course material or a structured curriculum.
+
+---
 
 ## What This Repository Covers
 
@@ -78,9 +96,7 @@ Making this repository public helps me:
 
 Others are welcome to read along, but this repository primarily reflects *my* journey.
 
-## Contributing
-
-We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+---
 
 ## Attribution & Learning Sources
 
@@ -95,13 +111,69 @@ This repository represents a learning journey in system design. The content has 
 
 ---
 
-## Daily Prompt
+## 🛠️ Development & Quality Assurance
 
-```text
-1. Read .cursor rules / copilot-instructions.md
-2. Review the content of the entire workspace.
-3. Do deep dive. Go through each and every file and perform systematic review.
+### Documentation Quality Checks (Local)
+
+Run Markdown lint against README and all documentation before opening a PR:
+
+```bash
+# From repo root - lint all markdown files
+npx --yes markdownlint-cli2 "README.md" "docs/**/*.md" "src/**/*.md" ".github/**/*.md"
 ```
+
+This uses the repository's `.markdownlint.json` configuration automatically.
+
+### Link Validation (Lychee)
+
+Run link checker to validate all links in documentation:
+
+```bash
+# Validate all links (recommended; matches CI behavior)
+docker run --rm -w /input -v "${PWD}:/input" lycheeverse/lychee:latest --config lychee.toml --no-progress README.md docs/**/*.md src/**/*.md .github/**/*.md
+```
+
+### Pre-Commit Checklist
+
+Before committing changes:
+
+- [ ] Run markdownlint and fix any issues
+- [ ] Run Lychee link checker (if Docker available)
+- [ ] Verify all file references point to existing files
+- [ ] Check that code fences have language specifications
+- [ ] Ensure proper blank lines around headings and lists
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! Whether it's:
+
+- 🐛 Bug fixes
+- 📝 Documentation improvements
+- 💡 New learning content
+- 🎯 Additional case studies or examples
+- 📚 Additional learning resources
+- 🔧 Tooling and automation improvements
+
+Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+---
+
+## 📞 About & Get In Touch
+
+### Swamy's Tech Skills Academy 2026
+
+Ready to master System Design? Let's begin your transformation! 🚀
+
+Ready to take your system design skills to the next level? Join our learning community!
+
+- 🌐 Visit our website for more courses
+- 📧 Contact us for custom training programs
+- 🏆 Get certified in System Design
+- 👥 Join our learning community
+
+Happy Learning! 🎓✨
 
 ---
 
